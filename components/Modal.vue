@@ -14,7 +14,7 @@
             <button
               class="modal__close"
               type="button"
-              :class="[`modal__close_${props.modalOption}`, {'modal__close_change':isChange}]"
+              :class="[`modal__close_${props.modalOption}`, {'modal__close_change': isChange}]"
               @click="modalClose(modalOption)"
             >
               <span class="visually-hidden">Закрыть</span>
@@ -38,9 +38,6 @@
 <script setup>
 import { ref, reactive, onMounted, onUnmounted, onUpdated} from 'vue';
 
-// import Message from './modal-forms/Message.vue';
-// import EnterForms from './EnterForms.vue'
-
 const props = defineProps({
   show: {
     type: Boolean,
@@ -55,8 +52,6 @@ const props = defineProps({
     default: () => ''
   }
 })
-
-let isChange = ref(false)
 
 const changeActiveForm = reactive(() => isChange.value = !isChange.value)
 
@@ -192,6 +187,27 @@ onUnmounted(() => {
     }
     &_element:after {
       transform: rotate(-45deg);
+    }
+  }
+
+  @include sm-tablets {
+    &__content {
+      height:60vh;
+    }
+
+    &__body {
+      margin: 0;
+      width: 100%;
+    }
+
+    &__close {
+      &_login {
+        top: -5%;
+        right: 0%;
+      }
+      &_change {
+        right: 0%;
+      }
     }
   }
 }

@@ -119,11 +119,6 @@ const changeActiveForm = () => {
 
     flex-direction: column;
     height: 100%;
-    .modal {
-      &__content {
-        height:60vh;
-      }
-    }
 
     &__item {
       display: flex;
