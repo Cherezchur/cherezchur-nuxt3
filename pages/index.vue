@@ -1,6 +1,5 @@
 <template>
   <main id="main">
-    hello
     <!--      <Slider />-->
   </main>
 </template>

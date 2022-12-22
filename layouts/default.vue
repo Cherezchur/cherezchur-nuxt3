@@ -1,20 +1,27 @@
 <template>
   <div class='layout_container'>
     <header class='layout_header'>
-      <logo />
-<!--      <Menu :modalShow="modalShowToogle"></Menu>-->
+      <Logo />
+      <Menu :modalShow="modalShowToogle" />
     </header>
-      <slot />
-<!--    <Modal-->
-<!--        v-show="isShowModal"-->
-<!--        :show="isShowModal"-->
-<!--        :modalOption="linkId"-->
-<!--        :closeModal="modalShowToogle"-->
-<!--    />-->
+    <slot />
+    <Modal
+       v-show="isShowModal"
+       :show="isShowModal"
+       :modalOption="linkId"
+       :closeModal="modalShowToogle"
+    />
   </div>
 </template>
 
 <script setup>
+let isShowModal = ref(false);
+let linkId = ref('');
+
+const modalShowToogle = (option) => {
+  linkId.value = option;
+  isShowModal.value = !isShowModal.value;
+}
 
 </script>
 
@@ -31,9 +38,9 @@
     width: 100%;
     padding: 0 20px;
 
-    //@include sm-tablets {
-    //  padding: 0 10px;
-    //}
+    @include sm-tablets {
+     padding: 0 10px;
+    }
   }
 }
 </style>

@@ -9,6 +9,7 @@
   },
   "devDependencies": {
     "nuxt": "3.0.0",
+    "nuxt-svgo": "^1.1.0",
     "sass": "^1.57.1"
   }
 }
