@@ -25,6 +25,7 @@
               <EnterForms
                 v-if="modalOption === 'login'"
                 :changeForm="changeActiveForm"
+                :isChange="isChange"
               />
               <Message v-else-if="modalOption === 'message'"/>
             </section>
@@ -52,6 +53,8 @@ const props = defineProps({
     default: () => ''
   }
 })
+
+let isChange = ref(false)
 
 const changeActiveForm = reactive(() => isChange.value = !isChange.value)
 

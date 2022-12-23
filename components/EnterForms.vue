@@ -46,10 +46,12 @@ const props = defineProps({
   changeForm: {
     type: Function,
     default: () => []
+  },
+  isChange: {
+    type: Boolean,
+    default: false
   }
 })
-
-let isChange = ref(false)
 
 const changeActiveForm = () => {
   props.changeForm();
