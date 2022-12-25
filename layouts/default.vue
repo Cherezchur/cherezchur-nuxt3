@@ -32,6 +32,7 @@ const modalShowToogle = (option) => {
   }
 
   &_header {
+    z-index: 5;
     display: flex;
     justify-content: space-between;
     position: fixed;

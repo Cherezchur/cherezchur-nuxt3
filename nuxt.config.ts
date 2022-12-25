@@ -5,6 +5,8 @@ export default defineNuxtConfig({
   modules: ['nuxt-svgo'],
   
   vite: {
+    assetsInclude: ['png','jpg'],
+
     css: {
       preprocessorOptions: {
         scss: {
@@ -12,5 +14,5 @@ export default defineNuxtConfig({
         }
       }
     }
-  }
+  },
 })

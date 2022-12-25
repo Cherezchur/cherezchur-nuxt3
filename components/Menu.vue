@@ -37,7 +37,7 @@
         id='likes' 
         class='menu__item like' 
         :class='{ menu__item_active: isActive }' 
-        to='/gallery/likes' 
+        to='#' 
         title='like pins'
       >
         <span>
