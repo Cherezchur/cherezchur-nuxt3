@@ -12,11 +12,11 @@ const pgSlides = [
   'pg-3.jpg',
 ]
 
-// const ilDSlides = [
-//   'ild-1.png',
-//   'ild-2.png',
-//   'ild-3.png',
-// ]
+const tslSlides = [
+  'tsl-1.png',
+  'tsl-2.png',
+  'tsl-3.png',
+]
 
 </script>
 
