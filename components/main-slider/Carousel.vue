@@ -7,22 +7,22 @@ const props = defineProps({
   }
 })
 
-const currentSlide = 0;
+const currentSlide = 1;
 
 </script>
 
 
 <template>
   <div class="carousel">
-      <div class="carousel__inner">
-        <MainSliderCarouselItem 
-          v-for="(slide, index) in slides" 
-          :key="`slide-${index}`"
-          :slide="slide"
-          :current-slide="currentSlide"
-          :index="index"
-        ></MainSliderCarouselItem>
-      </div>
+    <div class="carousel__inner">
+      <MainSliderCarouselItem 
+        v-for="(slide, index) in slides" 
+        :key="`slide-${index}`"
+        :slide="slide"
+        :current-slide="currentSlide"
+        :index="index"
+      ></MainSliderCarouselItem>
+    </div>
     </div>
 </template>
 
@@ -36,7 +36,6 @@ const currentSlide = 0;
     overflow-x: hidden;
     display: flex;
     height: 100%;
-    width: calc(100% / 3);
   }
 }
 </style>
