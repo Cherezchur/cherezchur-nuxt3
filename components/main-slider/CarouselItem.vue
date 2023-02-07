@@ -9,9 +9,9 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="carousel__item" v-show="currentSlide === index">
+  <Slide class="carousel__item" v-show="currentSlide === index">
     <img :src="`/banner/${slide}`"/>
-  </div>
+  </Slide>
 </template>
 
 

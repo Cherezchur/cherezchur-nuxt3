@@ -27,7 +27,7 @@ const tslSlides = [
     <div class="main__slider">
       <MainSliderCarousel :slides="ilDSlides"></MainSliderCarousel>
       <MainSliderCarousel :slides="pgSlides"></MainSliderCarousel>
-      <MainSliderCarousel :slides="ilDSlides"></MainSliderCarousel>
+      <MainSliderCarousel :slides="tslSlides"></MainSliderCarousel>
     </div>
   </main>
 </template>
