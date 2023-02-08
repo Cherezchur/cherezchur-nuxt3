@@ -17,7 +17,7 @@ import LogoIcon from '~/assets/image/icons/logo-eye.svg';
   padding-top: 10px;
 }
 .logo {
-  transition: 0.3s ease-in-out;
+  transition: $time-transition $param-transition;
 
   &:hover {
     filter: invert(90%);

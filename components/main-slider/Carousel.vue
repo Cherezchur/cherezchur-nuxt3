@@ -1,26 +1,29 @@
 <script setup>
 
 import 'vue3-carousel/dist/carousel.css'
-import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
+import { Carousel, Slide, Navigation } from 'vue3-carousel'
 
 const props = defineProps({
+  design: String,
   slides: {
     type: Array,
     default: []
   }
 })
 
-const currentSlide = 1;
-
 </script>
 
 
 <template>
-  <carousel :items-to-show="1">
+  <Carousel
+    :items-to-show="1"
+    :wrap-around="true"
+  >
 
     <Slide 
-      class="carousel__item" 
-      v-for="(slide, index) in slides" 
+      class="carousel__item"
+      :class=props.design
+      v-for="slide, index in props.slides" 
       :key="`slide-${index}`"
     >
       <img class="carousel__image" :src="`/banner/${slide}`"/>
@@ -28,10 +31,9 @@ const currentSlide = 1;
 
     <template #addons>
       <navigation />
-      <pagination />
     </template>
 
-  </carousel>
+  </Carousel>
 </template>
 
 
@@ -46,6 +48,7 @@ const currentSlide = 1;
   }
   &__image {
     height: 100vh;
+    width: 100%;
     object-fit: cover;
   }
   &__pagination {

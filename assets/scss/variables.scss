@@ -1,23 +1,48 @@
+:root {
+  // Fonts
+  --defaultFont                : 'Roboto', sans-serif;
+  --designFont                 : "CC Wild Words", italic;
+
+  //color-style
+  --white-translucent          :rgba(255, 255, 255, 0.4);
+  --white-light-translucent    :rgba(255, 255, 255, 0.8);
+  --white                      :rgba(255, 255, 255, 1);
+  --black                      :#191A1C;
+
+  --il-des_light-blue          :#AAC8C8;
+  --il-des_dark-blue           :#247095;
+  --pa-gr_light-pink           :#C389C9;
+  --pa-gr_dark-pink            :#713349;
+  --ta-sk-le_light-brown       :#B58071;
+  --ta-sk-le_dark-brown        :#804B3A;
+
+  --contur-dark-purple         :#311F2D;
+  --accent-pink                :#E3D2D8;
+
+  //transition
+  --time-transition            : 0.3s;
+  --param-transition          : ease-in;
+}
+
+// Fonts
+$defaultFont                :  var(--defaultFont);
+$designFont                 :  var(--designFont);
+
 //colors
+$white-translucent          :  var(--white-translucent);
+$white-light-translucent    :  var(--white-light-translucent);
+$white                      :  var(--white);
 
-/*bg*/
+$il-des_light-blue          :  var(--il-des_light-blue);
+$il-des_dark-blue           :  var(--il-des_dark-blue);
+$pa-gr_light-pink           :  var(--pa-gr_light-pink);
+$pa-gr_dark-pink            :  var(--pa-gr_dark-pink);
+$ta-sk-le_light-brown       :  var(--ta-sk-le_light-brown);
+$ta-sk-le_dark-brown        :  var(--ta-sk-le_dark-brown);
 
-$white-translucent: rgba(255, 255, 255, 0.4);
-$white-light-translucent: rgba(255, 255, 255, 0.8);
-$white: rgba(255, 255, 255, 1);
+$contur-dark-purple         :  var(--contur-dark-purple);
+$accent-pink                :  var(--accent-pink);
 
-/*project-colors*/
-
-$il-des_light-blue: #AAC8C8;
-$il-des_dark-blue: #247095;
-
-$pa-gr_light-pink: #C389C9;
-$pa-gr_dark-pink: #713349;
-
-$ta-sk-le_light-brown: #B58071;
-$ta-sk-le_dark-brown: #804B3A;
-
-/*element-colors*/
-
-$contur-dark-purple: #311F2D;
-$accent-pink: #E3D2D8;
+//transition
+$time-transition            :  var(--time-transition);
+$param-transition           :  var(--param-transition);

@@ -2,7 +2,7 @@
 
 export default defineNuxtConfig({
 
-  modules: ['nuxt-svgo'],
+  modules: ['nuxt-svgo', '@pinia/nuxt'],
   
   vite: {
     assetsInclude: ['png','jpg'],

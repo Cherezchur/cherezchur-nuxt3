@@ -1,33 +1,27 @@
 <script setup>
 
-const ilDSlides = [
-  'ild-1.png',
-  'ild-2.png',
-  'ild-3.png',
-]
+import { useCarousels } from '~/store/useCarousels'
 
-const pgSlides = [
-  'pg-1.jpg',
-  'pg-2.jpg',
-  'pg-3.jpg',
-]
+const carouselsStore = useCarousels()
 
-const tslSlides = [
-  'tsl-1.png',
-  'tsl-2.png',
-  'tsl-3.png',
-]
+carouselsStore.loading = true
+carouselsStore.FETCH_CAROUSELS()
 
 </script>
 
 
 <template>
   <main id="main">
-    <!--      <Sliders/>-->
     <div class="main__slider">
-      <MainSliderCarousel :slides="ilDSlides"></MainSliderCarousel>
-      <MainSliderCarousel :slides="pgSlides"></MainSliderCarousel>
-      <MainSliderCarousel :slides="tslSlides"></MainSliderCarousel>
+
+      <ClientOnly>
+        <MainSliderCarousel 
+          v-for="carousel, index in carouselsStore.carouselsData" 
+          :key="`slide-${index}`"
+          :design="carousel.design"
+          :slides="carousel.slides">
+        </MainSliderCarousel>
+      </ClientOnly>
     </div>
   </main>
 </template>
