@@ -22,7 +22,7 @@ const props = defineProps({
 
     <Slide 
       class="carousel__item"
-      :class=props.design
+      :class= "props.design"
       v-for="slide, index in props.slides" 
       :key="`slide-${index}`"
     >
@@ -39,9 +39,37 @@ const props = defineProps({
 
 <style lang="scss" scoped>
 .carousel {
+  position: relative;
   height: 100vh;
   width: calc(100vw / 3);
 
+  &__item {
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.3;
+    }
+    &.IlDes {
+      &:after {
+        background-color: $il-des_dark-blue;
+      }
+    }
+    &.PaGr {
+      &:after {
+        background-color: $pa-gr_dark-pink;
+      }
+    }
+    &.TaSk {
+      &:after {
+        background-color: $ta-sk-le_dark-brown;
+      }
+    }
+  }
   &__viewport {
     display: flex;
     height: 100%;
@@ -51,10 +79,7 @@ const props = defineProps({
     width: 100%;
     object-fit: cover;
   }
-  &__pagination {
-    position: absolute;
-    left: 20px;
-    bottom: 40px;
+  &__filter {
   }
 }
 </style>

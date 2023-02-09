@@ -15,6 +15,7 @@ carouselsStore.FETCH_CAROUSELS()
     <div class="main__slider">
 
       <ClientOnly>
+        <span v-if="carouselsStore.loading">Идет загрузка ...</span>
         <MainSliderCarousel 
           v-for="carousel, index in carouselsStore.carouselsData" 
           :key="`slide-${index}`"
@@ -28,6 +29,7 @@ carouselsStore.FETCH_CAROUSELS()
 
 
 <style lang='scss'>
+
 .container {
   display: flex;
   flex-direction: row;
