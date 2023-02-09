@@ -6,26 +6,45 @@
 
 
 <script setup>
-import LogoIcon from '~/assets/image/icons/logo-eye.svg';
+import LogoIcon from '~/assets/image/icons/logo-min.svg';
 
 </script>
 
 
 <style lang='scss' scoped>
-.logo-link {
-  margin-right: auto;
-  padding-top: 10px;
-}
 .logo {
+  width: 100px;
   transition: $time-transition $param-transition;
 
   &:hover {
     filter: invert(90%);
   }
-  
-  @include sm-tablets {
-   width: 40px;
-   height: 40px;
+
+  &-link {
+    margin-right: auto;
+    padding-top: 20px;
+  }
+}
+
+@include lg-desktop {
+  .logo {
+    width: 90px;
+  }
+}
+
+@include md-desktop {
+  .logo {
+    width: 70px;
+  }
+}
+
+@include sm-tablets {
+  .logo {
+    width: 60px;
+
+    &-link {
+      padding-top: 15px;
+    }
   }
 }
 </style>

@@ -1,41 +1,33 @@
-$lg-desktop-width: 1440px;
-$md-desktop-width: 1024px;
-$sm-tablets-width: 768px;
-$sm-mobile-width: 480px;
-$extra-sm-mobile-width: 320px;
+$lg-desktop-width: 1920px;
+$md-desktop-width: 1440px;
+$sm-tablets-width: 1024px;
+$sm-mobile-width: 768px;
+$extra-sm-mobile-width: 480px;
 
 /*==========  Desktop First  ==========*/
 
-/* Large devices | 1200px or less */
+
 @mixin lg-desktop {
   @media only screen and (max-width: #{$lg-desktop-width}) {
     @content
   }
 }
-
-/* Medium devices | 992px or less */
 @mixin md-desktop {
   @media only screen and (max-width: #{$md-desktop-width}) {
     @content
   }
 }
-
-/* Small tablet devices | 768px or less */
 @mixin sm-tablets {
   @media only screen and (max-width: #{$sm-tablets-width}) {
     @content
   }
 }
-
-/* Small mobile devices | 480px or less */
 @mixin sm-mobile {
   @media only screen and (max-width: #{$sm-mobile-width}) {
     @content
   }
 }
-
-/* Extra small mobile devices | 320px or less */
-@mixin esm-mobile {
+@mixin ems-mobile {
   @media only screen and (max-width: #{$extra-sm-mobile-width}) {
     @content
   }

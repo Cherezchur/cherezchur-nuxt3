@@ -32,15 +32,20 @@ const modalShowToogle = (option) => {
   }
 
   &_header {
-    z-index: 5;
+    z-index: 10;
     display: flex;
     justify-content: space-between;
     position: fixed;
     width: 100%;
+    height: 0;
     padding: 0 20px;
+  }
+}
 
-    @include sm-tablets {
-     padding: 0 10px;
+@include sm-tablets {
+  .layout {
+    &_header {
+      padding: 0 15px;
     }
   }
 }

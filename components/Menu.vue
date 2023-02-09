@@ -88,6 +88,7 @@ const modalShowClick = (linkName) => props.modalShow(linkName);
 <style lang='scss' scoped>
 .menu {
 	margin-left: auto;
+  margin-top: 40px;
   display: flex;
   align-items: center;
   position: relative;
@@ -266,6 +267,7 @@ const modalShowClick = (linkName) => props.modalShow(linkName);
   }
 
   @include sm-tablets {
+    margin-top: 30px;
 
     &__control {
 

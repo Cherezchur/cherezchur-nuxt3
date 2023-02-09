@@ -5,6 +5,7 @@ import { Carousel, Slide, Navigation } from 'vue3-carousel'
 
 const props = defineProps({
   design: String,
+  title: String,
   slides: {
     type: Array,
     default: []
@@ -30,7 +31,8 @@ const props = defineProps({
     </Slide>
 
     <template #addons>
-      <navigation />
+      <nuxt-link class="carousel__link" to="/">{{ props.title }}</nuxt-link>
+      <!-- <navigation /> -->
     </template>
 
   </Carousel>
@@ -52,7 +54,7 @@ const props = defineProps({
       left: 0;
       width: 100%;
       height: 100%;
-      opacity: 0.3;
+      opacity: 0.4;
     }
     &.IlDes {
       &:after {
@@ -79,7 +81,44 @@ const props = defineProps({
     width: 100%;
     object-fit: cover;
   }
-  &__filter {
+  &__link {
+    position: absolute;
+    bottom: 60px;
+    right: 10%;
+    width: 90%;
+    margin-left: 20%;
+    text-align: end;
+
+    font-size: 26px;
+    line-height: 1.2;
+    color: $white;
+
+    text-shadow: 1px 1px 2px $contur-dark-purple;
+  }
+}
+
+@mixin lg-desktop {
+  .carousel {
+  }
+}
+@mixin md-desktop {
+  @media only screen and (max-width: #{$md-desktop-width}) {
+    @content
+  }
+}
+@mixin sm-tablets {
+  @media only screen and (max-width: #{$sm-tablets-width}) {
+    @content
+  }
+}
+@mixin sm-mobile {
+  @media only screen and (max-width: #{$sm-mobile-width}) {
+    @content
+  }
+}
+@mixin esm-mobile {
+  @media only screen and (max-width: #{$extra-sm-mobile-width}) {
+    @content
   }
 }
 </style>

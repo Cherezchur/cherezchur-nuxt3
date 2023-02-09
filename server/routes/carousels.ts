@@ -2,6 +2,7 @@ export default defineEventHandler(() => {
   return {
     "carousels": [
       {
+        "title": "ILLUSTRATION AND DESIGN",
         "design": "IlDes",
         "slides": [
           "ild-1.png",
@@ -10,19 +11,21 @@ export default defineEventHandler(() => {
         ]
       },
       {
+        "title": "painting and graphics",
         "design": "PaGr",
         "slides": [
-          "pg-1.jpg",
           "pg-2.jpg",
+          "pg-1.jpg",
           "pg-3.jpg",
         ]
       },
       {
+        "title": "tattoo sketch and letters",
         "design": "TaSk",
         "slides": [
-          "tsl-1.png",
           "tsl-2.png",
-          "tsl-3.png",
+          "tsl-1.jpg",
+          "tsl-3.jpg",
         ]
       }
     ]

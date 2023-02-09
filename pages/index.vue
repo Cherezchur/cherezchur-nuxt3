@@ -11,20 +11,24 @@ carouselsStore.FETCH_CAROUSELS()
 
 
 <template>
-  <main id="main">
-    <div class="main__slider">
+  <transition name="main">
+    <main id="main">
+      <div class="main__slider">
 
-      <ClientOnly>
-        <span v-if="carouselsStore.loading">Идет загрузка ...</span>
-        <MainSliderCarousel 
-          v-for="carousel, index in carouselsStore.carouselsData" 
-          :key="`slide-${index}`"
-          :design="carousel.design"
-          :slides="carousel.slides">
-        </MainSliderCarousel>
-      </ClientOnly>
-    </div>
-  </main>
+        <ClientOnly>
+          <span v-if="carouselsStore.loading">Идет загрузка ...</span>
+          <MainSliderCarousel 
+            v-for="carousel, index in carouselsStore.carouselsData" 
+            :key="`slide-${index}`"
+            :design="carousel.design"
+            :slides="carousel.slides"
+            :title="carousel.title"
+          >
+          </MainSliderCarousel>
+        </ClientOnly>
+      </div>
+    </main>
+  </transition>
 </template>
 
 
@@ -37,6 +41,7 @@ carouselsStore.FETCH_CAROUSELS()
 }
 
 .main {
+
   &__slider {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

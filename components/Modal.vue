@@ -86,14 +86,26 @@ onUnmounted(() => {
 
   /* modal-animation */
 
-  &-enter,
-  &-leave-to {
-    opacity: 0;
-  }
 
   &-enter-active,
   &-leave-active {
-    transition: opacity 0.3s ease;
+    transition: opacity $time-transition;
+  }
+
+  &-enter-from {
+    opacity: 0;
+  }
+
+  &-enter-to {
+    opacity: 1;
+  }
+
+  &-leave-from {
+    opacity: 1;
+  }
+
+  &-leave-to {
+    opacity: 0;
   }
 
   // modal-container
