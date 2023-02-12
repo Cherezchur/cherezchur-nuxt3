@@ -1,9 +1,10 @@
 <script setup>
 
 import 'vue3-carousel/dist/carousel.css'
-import { Carousel, Slide, Navigation } from 'vue3-carousel'
+import { Carousel, Slide } from 'vue3-carousel'
 
 const props = defineProps({
+  slideWidthUpdate: Boolean,
   design: String,
   title: String,
   slides: {
@@ -12,15 +13,23 @@ const props = defineProps({
   }
 })
 
+const chapterCarousel = ref(null)
+// const slideWidthUpdate = ref(props.slideWidthUpdate)
+
+watch(() => props.slideWidthUpdate, () =>  {
+    console.log(chapterCarousel);
+    chapterCarousel.updateSlideWidth();
+  })
+
 </script>
 
 
 <template>
   <Carousel
+    ref="chapterCarousel"
     :items-to-show="1"
     :wrap-around="true"
   >
-
     <Slide 
       class="carousel__item"
       :class= "props.design"
@@ -32,7 +41,6 @@ const props = defineProps({
 
     <template #addons>
       <nuxt-link class="carousel__link" to="/">{{ props.title }}</nuxt-link>
-      <!-- <navigation /> -->
     </template>
 
   </Carousel>
@@ -44,6 +52,16 @@ const props = defineProps({
   position: relative;
   height: 100vh;
   width: calc(100vw / 3);
+
+  &.start {
+    width: calc(100vw / 3);
+  }
+  &.hover {
+    width: calc(100vw / 2);
+  }
+  &.not-hover {
+    width: calc(100vw / 4);
+  }
 
   &__item {
 
