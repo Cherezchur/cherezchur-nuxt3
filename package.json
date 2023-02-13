@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@pinia/nuxt": "^0.4.6",
-    "pinia": "^2.0.30",
-    "vue3-carousel": "^0.2.9"
+    "nuxt-swiper": "^1.0.0",
+    "pinia": "^2.0.30"
   }
 }

@@ -56,7 +56,7 @@ const props = defineProps({
 
 let isChange = ref(false)
 
-const changeActiveForm = reactive(() => isChange.value = !isChange.value)
+const changeActiveForm = () => isChange.value = !isChange.value
 
 const modalClose = (modalOption) => props.closeModal(props.modalOption);
 

@@ -1,3 +1,14 @@
+<script setup>
+let isShowModal = ref(false);
+let linkId = ref('');
+
+const modalShowToogle = (option) => {
+  linkId.value = option;
+  isShowModal.value = !isShowModal.value;
+}
+
+</script>
+
 <template>
   <div class='layout_container'>
     <header class='layout_header'>
@@ -13,17 +24,6 @@
     />
   </div>
 </template>
-
-<script setup>
-let isShowModal = ref(false);
-let linkId = ref('');
-
-const modalShowToogle = (option) => {
-  linkId.value = option;
-  isShowModal.value = !isShowModal.value;
-}
-
-</script>
 
 <style lang='scss' scoped>
 .layout {

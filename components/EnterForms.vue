@@ -55,7 +55,7 @@ const props = defineProps({
 
 const changeActiveForm = () => {
   props.changeForm();
-  isChange.value = !isChange.value
+  props.isChange= !props.isChange
 }
 
 </script>

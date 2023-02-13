@@ -2,7 +2,7 @@
 
 export default defineNuxtConfig({
 
-  modules: ['nuxt-svgo', '@pinia/nuxt'],
+  modules: ['nuxt-svgo', '@pinia/nuxt', 'nuxt-swiper'],
   
   vite: {
     assetsInclude: ['png','jpg'],

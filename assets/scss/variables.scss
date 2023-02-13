@@ -21,7 +21,8 @@
 
   //transition
   --time-transition            : 0.3s;
-  --param-transition          : ease-in;
+  --accent-time-transition     : 0.8s;
+  --param-transition           : ease-in;
 }
 
 // Fonts
@@ -46,4 +47,5 @@ $accent-pink                :  var(--accent-pink);
 
 //transition
 $time-transition            :  var(--time-transition);
+$accent-time-transition     :  var(--accent-time-transition);
 $param-transition           :  var(--param-transition);
