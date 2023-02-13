@@ -58,7 +58,7 @@ const removeHover = () => {
           <img class="slider__image" :src="`/banner/${slide}`"/>
         </SwiperSlide>
 
-        <nuxt-link class="slider__link" to="/">
+        <nuxt-link class="slider__link" :to=carousel.path>
           <span class="slider__link-arrow">&#10140;</span>
           <span class="slider__link-title">{{ carousel.title }}</span>
         </nuxt-link>
@@ -166,24 +166,14 @@ const removeHover = () => {
 }
 
 @mixin lg-desktop {
-  .carousel {
-  }
 }
 @mixin md-desktop {
-  .carousel {
-  }
 }
 @mixin sm-tablets {
-  .carousel {
-  }
 }
 @mixin sm-mobile {
-  .carousel {
-  }
 }
 @mixin esm-mobile {
-  .carousel {
-  }
 }
 
 </style>
