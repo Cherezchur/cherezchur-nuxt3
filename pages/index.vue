@@ -4,13 +4,7 @@
 
 
 <template>
-  <transition name="main">
-    <main id="main">
-
-      <MainSlider />
-
-    </main>
-  </transition>
+  <MainSlider />
 </template>
 
 

@@ -3,7 +3,7 @@ export default defineEventHandler(() => {
     "carousels": [
       {
         "title": "ILLUSTRATION AND DESIGN",
-        "path": "/gallery/illustration_and_design", 
+        "path": "/gallery/illustration-and-design", 
         "design": "IlDes",
         "slides": [
           "ild-1.png",
@@ -13,7 +13,7 @@ export default defineEventHandler(() => {
       },
       {
         "title": "painting and graphics",
-        "path": "/gallery/painting_and_graphics", 
+        "path": "/gallery/painting-and-graphics", 
         "design": "PaGr",
         "slides": [
           "pg-2.jpg",
@@ -23,7 +23,7 @@ export default defineEventHandler(() => {
       },
       {
         "title": "tattoo sketch and letters",
-        "path": "/gallery/tattoo_sketch_and_letters", 
+        "path": "/gallery/tattoo-sketch-and-letters", 
         "design": "TaSk",
         "slides": [
           "tsl-2.png",
