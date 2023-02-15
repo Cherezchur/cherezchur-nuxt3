@@ -1,11 +1,5 @@
 export default defineNuxtRouteMiddleware((to, from) => {
 
-  interface params {
-      path: string;
-      title: string;
-      style: string;
-  }[];
-
   const paramsName = String(to.params.name)
   const data = $fetch(`/gallery-params`)
 
@@ -17,7 +11,6 @@ export default defineNuxtRouteMiddleware((to, from) => {
       if(!paths.includes(paramsName)) {
         navigateTo('/gallery')
       }
-      
+
     })
-  
 })
