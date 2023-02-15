@@ -1,24 +1,24 @@
 <script setup>
-import { useGalleryPaths } from '~/store/useGalleryPaths'
-
-const galleryPaths = useGalleryPaths()
-const route = useRoute()
-const routeName = route.params.name
-
-galleryPaths.FETCH_GALLERY_PATHS()
-console.log(galleryPaths.GET_PATHS)
+import { useGalleryParams } from '~/store/useGalleryParams'
 
 definePageMeta({
   middleware: ["gallerys-route-validation"]
 })
 
+const store = useGalleryParams()
+const route = useRoute()
+const routeName = route.params.name
+
+store.fetchGalleryParams(routeName)
+
 </script>
 
 <template>
-  <section class='gallery'>
-    <h1 class='gallery__title'></h1>
-    {{ galleryPaths.GET_PATHS }}
-  </section>
+  <client-only>
+    <section class='gallery' >
+      <h1 class='gallery__title'>{{ store.title }}</h1>
+    </section>
+  </client-only>
 </template>
 
 <style lang="scss" scoped>

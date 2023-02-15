@@ -110,17 +110,17 @@ const removeHover = () => {
       height: 100%;
       opacity: 0.4;
     }
-    &.IlDes {
+    &.ilDes {
       &:after {
         background-color: $il-des_dark-blue;
       }
     }
-    &.PaGr {
+    &.paGr {
       &:after {
         background-color: $pa-gr_dark-pink;
       }
     }
-    &.TaSk {
+    &.taSk {
       &:after {
         background-color: $ta-sk-le_dark-brown;
       }

@@ -1,3 +1,7 @@
+<script>
+
+</script>
+
 <template>
   <section class='main-gallery'>
     <h1>Gallery Sections</h1>
@@ -9,10 +13,6 @@
     </div>
   </section>
 </template>
-
-<script>
-
-</script>
 
 <style lang="scss" scoped>
 

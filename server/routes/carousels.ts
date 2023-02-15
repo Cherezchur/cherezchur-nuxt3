@@ -4,7 +4,7 @@ export default defineEventHandler(() => {
       {
         "title": "ILLUSTRATION AND DESIGN",
         "path": "/gallery/illustration-and-design", 
-        "design": "IlDes",
+        "design": "ilDes",
         "slides": [
           "ild-1.png",
           "ild-2.png",
@@ -14,7 +14,7 @@ export default defineEventHandler(() => {
       {
         "title": "painting and graphics",
         "path": "/gallery/painting-and-graphics", 
-        "design": "PaGr",
+        "design": "paGr",
         "slides": [
           "pg-2.jpg",
           "pg-1.jpg",
@@ -24,7 +24,7 @@ export default defineEventHandler(() => {
       {
         "title": "tattoo sketch and letters",
         "path": "/gallery/tattoo-sketch-and-letters", 
-        "design": "TaSk",
+        "design": "taSk",
         "slides": [
           "tsl-2.png",
           "tsl-1.jpg",
