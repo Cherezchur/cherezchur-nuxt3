@@ -1,5 +1,4 @@
 <script setup>
-
 </script>
 
 
@@ -9,8 +8,4 @@
 
 
 <style lang='scss'>
-
-.main {
-  
-}
 </style>

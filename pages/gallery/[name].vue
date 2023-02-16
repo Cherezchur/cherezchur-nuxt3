@@ -1,5 +1,6 @@
 <script setup>
 import { useGalleryParams } from '~/store/useGalleryParams'
+import { storeToRefs } from 'pinia';
 
 definePageMeta({
   middleware: ["gallerys-route-validation"]
@@ -11,12 +12,17 @@ const routeName = route.params.name
 
 store.fetchGalleryParams(routeName)
 
+const { getTitle, getPageParams } = storeToRefs(store)
+
+// console.log(getPageParams(routeName));
+
 </script>
 
 <template>
   <client-only>
-    <section class='gallery' >
-      <h1 class='gallery__title'>{{ store.title }}</h1>
+    <section class='gallery'>
+      <h1 class='gallery__title'>{{ getTitle(routeName) }}</h1>
+      {{ getPageParams(routeName) }}
     </section>
   </client-only>
 </template>
@@ -25,6 +31,15 @@ store.fetchGalleryParams(routeName)
 .gallery {
   &__title {
     color: black;
+  }
+  &.ilDes {
+    background-color: $il-des_dark-blue;
+  }
+  &.paGr {
+    background-color: $pa-gr_dark-pink;
+  }
+  &.taSk {
+    background-color: $ta-sk-le_dark-brown;
   }
 }
 </style>

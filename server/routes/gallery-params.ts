@@ -4,22 +4,22 @@ export default defineEventHandler(() => {
       {
         "path": "illustration-and-design",
         "title": "illustration and design",
-        "style": "IlDes"
+        "option": "ilDes"
       },
       {
         "path": "painting-and-graphics",
         "title": "painting and graphics",
-        "style": "PaGr"
+        "option": "paGr"
       },
       {
         "path": "tattoo-sketch-and-letters",
         "title": "tattoo sketch and letters",
-        "style": "TaSk"
+        "option": "taSk"
       },
       {
         "path": "likes",
         "title": "likes",
-        "style": "likes"
+        "option": "likes"
       },
     ]
   }

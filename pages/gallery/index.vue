@@ -1,16 +1,24 @@
-<script>
+<script setup>
+import { useGalleryParams } from '~/store/useGalleryParams'
+
+const store = useGalleryParams()
+
+store.fetchGalleryParams('illustration-and-design')
 
 </script>
 
 <template>
   <section class='main-gallery'>
-    <h1>Gallery Sections</h1>
-    <div class="main-gallery__links">
-      <a href="#" class="main-gallery__item">Link 1</a>
-      <a href="#" class="main-gallery__item">Link 2</a>
-      <a href="#" class="main-gallery__item">Link 3</a>
-      <a href="#" class="main-gallery__item">Link 4</a>
-    </div>
+    <h1 class='main-gallery__title'>Gallery Sections</h1>
+    <ClientOnly>
+      <div class="main-gallery__links">
+        {{ store.params }}
+        <a href="#" class="main-gallery__item">Link 1</a>
+        <a href="#" class="main-gallery__item">Link 2</a>
+        <a href="#" class="main-gallery__item">Link 3</a>
+        <a href="#" class="main-gallery__item">Link 4</a>
+      </div>
+    </ClientOnly>
   </section>
 </template>
 
@@ -18,6 +26,9 @@
 
 .main-gallery {
 
+  &__title {
+    @include visually-hidden;
+  }
   &__links {
     height: 100vh;
     display: flex;
