@@ -1,43 +1,61 @@
 <script setup>
 import { useGalleryParams } from '~/store/useGalleryParams'
-import { storeToRefs } from 'pinia';
+import { useGalleryCarousel } from '~/store/useGalleryCarousel'
 
 definePageMeta({
   middleware: ["gallerys-route-validation"]
 })
 
-const store = useGalleryParams()
+const paramsStore = useGalleryParams()
+const paramsCarousel = useGalleryCarousel()
+
 const route = useRoute()
 const routeName = route.params.name
 
-store.fetchGalleryParams(routeName)
+paramsStore.fetchPageParams(routeName)
 
-const { getTitle, getPageParams } = storeToRefs(store)
+paramsCarousel.fetchCarouselItems(routeName)
 
 </script>
 
 <template>
-  <client-only>
-    <section class='gallery'>
-      <h1 class='gallery__title'>{{ getTitle(routeName) }}</h1>
-      {{ getPageParams(routeName) }}
-    </section>
-  </client-only>
+  <transition name="gallery">
+    <ClientOnly>
+      <section :class='["gallery", paramsStore.pageOption]'>
+
+        <GalleryTitle :title="paramsStore.pageParams.title"></GalleryTitle>
+
+        <GallerySlider :items="paramsCarousel.carouselItems"></GallerySlider>
+
+      </section>
+    </ClientOnly>
+  </transition>
 </template>
 
 <style lang="scss" scoped>
 .gallery {
+  height: 100vh;
+  width: 100vw;
+
   &__title {
-    color: black;
+    color: white;
+    padding-top: 30px;
+
+    text-align: center;
+    font-size: 1.6rem;
+    @include title-shadow;
   }
   &.ilDes {
-    background-color: $il-des_dark-blue;
+    background: linear-gradient(45deg, $il-des_dark-blue 0%, $il-des_light-blue  100%);  
   }
   &.paGr {
-    background-color: $pa-gr_dark-pink;
+    background: linear-gradient(45deg, $pa-gr_dark-pink 0%, $pa-gr_light-pink  100%); 
   }
   &.taSk {
-    background-color: $ta-sk-le_dark-brown;
+    background: linear-gradient(45deg, $ta-sk-le_dark-brown 0%, $ta-sk-le_light-brown 100%); 
+  }
+  &.likes {
+    background: linear-gradient(45deg, $contur-dark-purple 0%, $accent-pink 100%); 
   }
 }
 </style>

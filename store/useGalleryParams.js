@@ -3,28 +3,21 @@ import { defineStore } from 'pinia'
 export const useGalleryParams = defineStore('gallery-params', () => {
 
   let params = ref([])
+  let pageParams = ref({})
+  let pageOption = ref('')
 
-  const getPageParams = computed(() =>  {
-    return (path) => params.value.find(param => param.path === path)
-  })
+  async function fetchPageParams(path) {
+    const data = await $fetch(`/gallery-params`)
+    const dataParams = data.params.find(param => param.path === path)
+    pageParams.value = dataParams
+    pageOption.value = dataParams.option
+    return params.value
+  }
 
-  const getTitle = computed(() => {
-    return (path) => {
-      const params = getPageParams.value(path)
-      return params.title
-    }
-  })
-
-  // const getTitles = () => {
-  //   let paramsTitles = []
-  //   params.value.forEach(param => paramsPaths.push(param.title))
-  //   return paramsTitles
-  // }
-
-  async function fetchGalleryParams(path) {
+  async function fetchGalleryParams() {
     const data = await $fetch(`/gallery-params`)
     params.value = data.params
   }
 
-  return { params, getPageParams, getTitle, fetchGalleryParams }
+  return { params, pageParams, pageOption, fetchPageParams, fetchGalleryParams }
 })

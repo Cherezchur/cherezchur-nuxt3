@@ -2,6 +2,10 @@
 
 export default defineNuxtConfig({
 
+  // app: {
+  //   pageTransition: { name: 'page', mode: 'out-in' }
+  // },
+
   modules: ['nuxt-svgo', '@pinia/nuxt', 'nuxt-swiper'],
   
   vite: {

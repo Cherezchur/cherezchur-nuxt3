@@ -1,21 +1,16 @@
 import { defineStore } from 'pinia'
 
-export const useCarousels = defineStore('carousels', {
+export const useCarousels = defineStore('carousels', () => {
 
-  state: () => ({
-    carouselsData: [],
-    loading: true
-  }),
+  let carouselsData = ref([])
+  let loading = ref(true)
 
-  getters: {
-  },
+  async function fetchCarousels() {
+    const data = await $fetch('/carousels')
 
-  actions: {
-    async FETCH_CAROUSELS() {
-      const data = await $fetch('/carousels')
-
-      this.carouselsData = data.carousels
-      this.loading = false
-    }
+    carouselsData.value = data.carousels
+    loading.value = false
   }
+
+  return {carouselsData, loading, fetchCarousels}
 })

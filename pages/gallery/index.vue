@@ -3,6 +3,8 @@ import { useGalleryParams } from '~/store/useGalleryParams'
 
 const store = useGalleryParams()
 
+const getLink = (link) => `/gallery/${link}`
+
 store.fetchGalleryParams()
 
 </script>
@@ -15,7 +17,7 @@ store.fetchGalleryParams()
         <NuxtLink
           v-for="link in store.params"
           :key=link.title
-          :to=link.path
+          :to=getLink(link.path)
           :class="['main-gallery__item', link.option]"
         >
           <span class="main-gallery__item-title">{{ link.title }}</span>
@@ -44,7 +46,6 @@ store.fetchGalleryParams()
     height: 25%;
     display: flex;
     flex-grow: 1;
-    align-items: end;
     text-align: start;
     padding: 1rem;
     padding-left: 20px;
@@ -55,17 +56,20 @@ store.fetchGalleryParams()
     transition: $time-transition;
 
     &-title {
+      margin-top: auto;
       margin-right: 20px;
       text-shadow: -1px -1px 2px $contur-dark-purple;
     }
     &-arrow {
+      margin-top: auto;
       margin-left: 50%;
       flex-grow: 1;
       opacity: 0;
       transform: rotate(180deg);
-      text-shadow: 1px 1px 2px $contur-dark-purple;
       text-align: end;
 
+      @include title-shadow;
+      
       transition: $accent-time-transition;
     }
 

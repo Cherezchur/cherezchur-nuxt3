@@ -2,9 +2,8 @@
 
 import { useCarousels } from '~/store/useCarousels'
 
-const carouselsStore = useCarousels()
-carouselsStore.loading = true
-carouselsStore.FETCH_CAROUSELS()
+const store = useCarousels()
+store.fetchCarousels()
 
 let hoverInitial = ref(['start', 'start', 'start'])
 let swipers = [];
@@ -37,10 +36,10 @@ const removeHover = () => {
   <div class="main__slider" @mouseleave="removeHover">
 
     <ClientOnly>
-      <span v-if="carouselsStore.loading">Идет загрузка ...</span>
+      <span v-if="store.loading">Идет загрузка ...</span>
       <Swiper
         v-else
-        v-for="carousel, index in carouselsStore.carouselsData"
+        v-for="carousel, index in store.carouselsData"
         :class="['slider', hoverInitial[index]]"
         :key="`slide-${index}`"
         :items-to-show="1"
@@ -58,10 +57,7 @@ const removeHover = () => {
           <img class="slider__image" :src="`/banner/${slide}`"/>
         </SwiperSlide>
 
-        <nuxt-link 
-          class="slider__link" 
-          :to=carousel.path
-        >
+        <nuxt-link class="slider__link" :to=carousel.path>
           <span class="slider__link-arrow">&#10140;</span>
           <span class="slider__link-title">{{ carousel.title }}</span>
         </nuxt-link>
