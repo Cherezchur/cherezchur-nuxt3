@@ -14,8 +14,6 @@ store.fetchGalleryParams(routeName)
 
 const { getTitle, getPageParams } = storeToRefs(store)
 
-// console.log(getPageParams(routeName));
-
 </script>
 
 <template>

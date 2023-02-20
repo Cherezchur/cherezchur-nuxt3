@@ -3,7 +3,7 @@ import { useGalleryParams } from '~/store/useGalleryParams'
 
 const store = useGalleryParams()
 
-store.fetchGalleryParams('illustration-and-design')
+store.fetchGalleryParams()
 
 </script>
 
@@ -12,11 +12,15 @@ store.fetchGalleryParams('illustration-and-design')
     <h1 class='main-gallery__title'>Gallery Sections</h1>
     <ClientOnly>
       <div class="main-gallery__links">
-        {{ store.params }}
-        <a href="#" class="main-gallery__item">Link 1</a>
-        <a href="#" class="main-gallery__item">Link 2</a>
-        <a href="#" class="main-gallery__item">Link 3</a>
-        <a href="#" class="main-gallery__item">Link 4</a>
+        <NuxtLink
+          v-for="link in store.params"
+          :key=link.title
+          :to=link.path
+          :class="['main-gallery__item', link.option]"
+        >
+          <span class="main-gallery__item-title">{{ link.title }}</span>
+          <span class="main-gallery__item-arrow">&#10140;</span>
+        </NuxtLink>
       </div>
     </ClientOnly>
   </section>
@@ -32,18 +36,60 @@ store.fetchGalleryParams('illustration-and-design')
   &__links {
     height: 100vh;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content:space-between;
   }
   &__item {
-    width: 25%;
-    text-align: center;
-    background-color: #f2f2f2;
+    width: 100%;
+    height: 25%;
+    display: flex;
+    flex-grow: 1;
+    align-items: end;
+    text-align: start;
     padding: 1rem;
-    text-decoration: none;
-    color: #333;
+    padding-left: 20px;
+
+    color: $white;
     font-size: 1.2rem;
-    border: 1px solid #ccc;
+
+    transition: $time-transition;
+
+    &-title {
+      margin-right: 20px;
+      text-shadow: -1px -1px 2px $contur-dark-purple;
+    }
+    &-arrow {
+      margin-left: 50%;
+      flex-grow: 1;
+      opacity: 0;
+      transform: rotate(180deg);
+      text-shadow: 1px 1px 2px $contur-dark-purple;
+      text-align: end;
+
+      transition: $accent-time-transition;
+    }
+
+    &:hover {
+      height:40%;
+
+      & .main-gallery__item-arrow {
+        opacity: 1;
+        margin-left: 0;
+      }
+    }
+
+    &.ilDes {
+      background: linear-gradient(45deg, $il-des_dark-blue 0%, $il-des_light-blue  100%);  
+    }
+    &.paGr {
+      background: linear-gradient(45deg, $pa-gr_dark-pink 0%, $pa-gr_light-pink  100%); 
+    }
+    &.taSk {
+      background: linear-gradient(45deg, $ta-sk-le_dark-brown 0%, $ta-sk-le_light-brown 100%); 
+    }
+    &.likes {
+      background: linear-gradient(45deg, $contur-dark-purple 0%, $accent-pink 100%); 
+    }
   }
 }
 </style>

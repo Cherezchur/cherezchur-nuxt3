@@ -15,17 +15,16 @@ export const useGalleryParams = defineStore('gallery-params', () => {
     }
   })
 
-  const getPaths = () => {
-    let paramsPaths = []
-    params.value.forEach(param => paramsPaths.push(param.path))
-    console.log(paramsPaths);
-    return paramsPaths
-  }
+  // const getTitles = () => {
+  //   let paramsTitles = []
+  //   params.value.forEach(param => paramsPaths.push(param.title))
+  //   return paramsTitles
+  // }
 
   async function fetchGalleryParams(path) {
     const data = await $fetch(`/gallery-params`)
     params.value = data.params
   }
 
-  return { params, getPageParams, getTitle, getPaths, fetchGalleryParams }
+  return { params, getPageParams, getTitle, fetchGalleryParams }
 })

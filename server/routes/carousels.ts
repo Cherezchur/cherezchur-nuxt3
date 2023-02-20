@@ -2,7 +2,7 @@ export default defineEventHandler(() => {
   return {
     "carousels": [
       {
-        "title": "ILLUSTRATION AND DESIGN",
+        "title": "illustration and design",
         "path": "/gallery/illustration-and-design", 
         "design": "ilDes",
         "slides": [
