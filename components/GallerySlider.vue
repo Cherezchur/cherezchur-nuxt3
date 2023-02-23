@@ -37,5 +37,8 @@ const props = defineProps({
 .gallery-slider {
   width: 100%;
   height: 100%;
+  &__image {
+    width: 50vw;
+  }
 }
 </style>

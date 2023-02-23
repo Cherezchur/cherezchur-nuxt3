@@ -15,8 +15,28 @@ export default defineEventHandler(() => {
     {
       "title": "Harmony of the microcosm",
       "path": "harmony-of-the-microcosm",
-      "description": "Геометрическая элипсовидная композиция",
+      "description": "Геометрическая элипсовидная композиция. Работа выполнена в векторном масштабируемом формате svg",
       "images": ["elliptical-geometric-pattern.png"],
+      "isLikes": false,
+    },
+    {
+      "title": "Face of war",
+      "path": "face-of-war",
+      "description": "Иллюстрация символизирует горе и страдание войны. Работа выполнена в векторном масштабируемом формате svg",
+      "images": [
+        "face-of-war.svg",
+        "face-of-war-1.svg"
+      ],
+      "isLikes": false,
+    },
+    {
+      "title": "F*ck",
+      "path": "fck",
+      "description": "Иллюстрация сделана в дань святому правилу посылать все правила и даже это правило нужно послать. Работа выполнена в векторном масштабируемом формате svg",
+      "images": [
+        "fck.svg",
+        "fck-1.svg"
+      ],
       "isLikes": false,
     }
   ]
