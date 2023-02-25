@@ -25,7 +25,7 @@ paramsCarousel.fetchCarouselItems(routeName)
 
         <GalleryTitle :title="paramsStore.pageParams.title"></GalleryTitle>
 
-        <GallerySlider :items="paramsCarousel.carouselItems"></GallerySlider>
+        <GalleryList :items="paramsCarousel.carouselItems"></GalleryList>
 
       </section>
     </ClientOnly>
@@ -34,16 +34,9 @@ paramsCarousel.fetchCarouselItems(routeName)
 
 <style lang="scss" scoped>
 .gallery {
-  height: 100vh;
-  width: 100vw;
 
   &__title {
-    color: white;
-    padding-top: 30px;
-
-    text-align: center;
-    font-size: 1.6rem;
-    @include title-shadow;
+    
   }
   &.ilDes {
     background: linear-gradient(45deg, $il-des_dark-blue 0%, $il-des_light-blue  100%);  
