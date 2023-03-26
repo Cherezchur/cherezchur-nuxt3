@@ -39,9 +39,9 @@ const removeHover = () => {
       <span v-if="store.loading">Идет загрузка ...</span>
       <Swiper
         v-else
-        v-for="carousel, index in store.carouselsData"
+        v-for="{design, slides, path, title }, index in store.carouselsData"
         :class="['slider', hoverInitial[index]]"
-        :key="`slide-${index}`"
+        :key="title"
         :items-to-show="1"
         :loop="true"
         :wrapAround="true"
@@ -50,16 +50,16 @@ const removeHover = () => {
       >
         <SwiperSlide 
           class="slider__item"
-          :class= "carousel.design"
-          v-for="slide, index in carousel.slides" 
+          :class= "design"
+          v-for="slide, index in slides" 
           :key="`slide-${index}`"
         >
           <img class="slider__image" :src="`/banner/${slide}`"/>
         </SwiperSlide>
 
-        <nuxt-link class="slider__link" :to=carousel.path>
+        <nuxt-link class="slider__link" :to=path>
           <span class="slider__link-arrow">&#10140;</span>
-          <span class="slider__link-title">{{ carousel.title }}</span>
+          <span class="slider__link-title">{{ title }}</span>
         </nuxt-link>
       </Swiper>
     </ClientOnly>
@@ -81,6 +81,7 @@ const removeHover = () => {
   width: calc(100vw / 3);
 
   transition: $accent-time-transition;
+  cursor: url('/assets/image/icons/swaip-cursor.svg'), auto;
 
   &.start {
     width: calc(100vw / 3);
