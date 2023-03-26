@@ -69,7 +69,6 @@ const removeHover = () => {
 <style lang='scss'>
 
 .main {
-
   &__slider {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -81,7 +80,7 @@ const removeHover = () => {
   height: 100vh;
   width: calc(100vw / 3);
 
-  transition: $time-transition;
+  transition: $accent-time-transition;
 
   &.start {
     width: calc(100vw / 3);
@@ -136,10 +135,11 @@ const removeHover = () => {
   }
   &__link {
     position: absolute;
-    bottom: 60px;
-    right: 10%;
-    width: 90%;
-    margin-left: 20%;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 8%;
+    padding: 20px 10%;
     text-align: end;
     z-index: 2;
 
@@ -151,6 +151,7 @@ const removeHover = () => {
     color: $white;
 
     text-shadow: 1px 1px 2px $contur-dark-purple;
+    background-color: rgba(0,0,0,.3);
 
     &-arrow {
       margin-right: 10px;
@@ -164,15 +165,73 @@ const removeHover = () => {
   }
 }
 
-@mixin lg-desktop {
+@include lg-desktop {
+  .slider {
+    &__link {
+      font-size: 24px;
+    }
+  }
 }
-@mixin md-desktop {
+@include md-desktop {
+  .slider {
+    &__link {
+      height: 11%;
+      font-size: 20px;
+    }
+  }
 }
-@mixin sm-tablets {
+@include sm-tablets {
+  .slider {
+    &__link {
+      height: 13%;
+      font-size: 18px;
+    }
+  }
 }
-@mixin sm-mobile {
+@include sm-mobile {
+  .main {
+    &__slider {
+      height: 100vh;
+      grid-template-columns:  1fr;
+      grid-template-rows:  repeat( 3, 1fr);
+    }
+  }
+
+  .slider {
+    width: 100%;
+
+    &.start {
+      width: 100%;
+      height: calc(100vh / 3);
+    }
+    &.hover {
+      width: 100%;
+      height: calc(100vh / 2);
+
+      .slider__link-arrow {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    &.not-hover {
+      width: 100%;
+      height: calc(100vh / 4);
+    }
+    &__image {
+      height: 100%;
+      object-position: 50% 50%;
+    }
+    &__link {
+      height: fit-content;
+    }
+  }
 }
-@mixin esm-mobile {
+@include ems-mobile {
+  .slider {
+    &__link {
+      font-size: 14px;
+    }
+  }
 }
 
 </style>
