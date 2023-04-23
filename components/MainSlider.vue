@@ -81,7 +81,7 @@ const removeHover = () => {
   width: calc(100vw / 3);
 
   transition: $accent-time-transition;
-  cursor: url('/assets/image/icons/swaip-cursor.svg'), auto;
+  cursor: url('/assets/image/icons/swaip-cursor-01.svg'), auto;
 
   &.start {
     width: calc(100vw / 3);
