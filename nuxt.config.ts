@@ -7,6 +7,12 @@ export default defineNuxtConfig({
   // },
 
   modules: ['nuxt-svgo', '@pinia/nuxt', 'nuxt-swiper'],
+
+  components: [
+    {path: '@/components/common', pathPrefix: false},
+    {path: '@/components/gallery', pathPrefix: false},
+    {path: '@/components/main', pathPrefix: false},
+  ],
   
   vite: {
     assetsInclude: ['png','jpg'],

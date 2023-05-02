@@ -21,7 +21,8 @@ paramsCarousel.fetchCarouselItems(routeName)
 <template>
   <transition name="gallery">
     <ClientOnly>
-      <section :class='["gallery", paramsStore.pageOption]'>
+      <section :class='["gallery", paramsStore.pageParams.option]'>
+        {{ paramsStore.pageParams }}
 
         <GalleryTitle :title="paramsStore.pageParams.title"></GalleryTitle>
 
@@ -34,6 +35,7 @@ paramsCarousel.fetchCarouselItems(routeName)
 
 <style lang="scss" scoped>
 .gallery {
+  height: 100%;
 
   &__title {
     
