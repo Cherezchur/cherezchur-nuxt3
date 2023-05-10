@@ -15,7 +15,7 @@ const modalShowToogle = (option) => {
     <Menu :modalShow="modalShowToogle" />
   </header>
 
-  <main>
+  <main class="gradient">
     <slot />
   </main>
 

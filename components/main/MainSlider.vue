@@ -5,59 +5,42 @@ import { useCarousels } from '~/store/useCarousels'
 const store = useCarousels()
 store.fetchCarousels()
 
-let hoverInitial = ref(['start', 'start', 'start'])
 let swipers = [];
 
 const onSwiper = (swiper) => {
   swipers.push(swiper)
 };
 
-const setHover = (index) => {
-
-  for (let initialKey in hoverInitial.value) { 
-    if(initialKey == index) {
-      hoverInitial.value[initialKey] = 'hover'
-    } else {
-      hoverInitial.value[initialKey] = 'not-hover'
-    }
-  }
-
-}
-
-const removeHover = () => {
-  for (let initialKey in hoverInitial.value) { 
-    hoverInitial.value[initialKey] = 'start'
-  }
-}
-
 </script>
 
 <template>
-  <div class="main__slider" @mouseleave="removeHover">
+  <div class="main__slider">
 
     <ClientOnly>
       <span v-if="store.loading">Идет загрузка ...</span>
       <Swiper
         v-else
-        v-for="{design, slides, path, title }, index in store.carouselsData"
-        :class="['slider', hoverInitial[index]]"
+        v-for="{design, slides, path, title } in store.carouselsData"
+        :class="['slider', ]"
         :key="title"
         :items-to-show="1"
         :loop="true"
         :wrapAround="true"
         @swiper="onSwiper"
-        @mouseover="setHover(index)"
       >
         <SwiperSlide 
           class="slider__item"
           :class= "design"
-          v-for="slide, index in slides" 
+          v-for="(slide, index) in slides"
           :key="`slide-${index}`"
         >
           <img class="slider__image" :src="`/banner/${slide}`"/>
         </SwiperSlide>
 
-        <nuxt-link class="slider__link" :to=path>
+        <nuxt-link
+					:class="['slider__link', design]"
+					:to=path
+				>
           <span class="slider__link-arrow">&#10140;</span>
           <span class="slider__link-title">{{ title }}</span>
         </nuxt-link>
@@ -70,68 +53,45 @@ const removeHover = () => {
 
 .main {
   &__slider {
+		margin: 0 auto;
+		height: 100vh;
+		width: 80vw;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+		gap: 40px;
   }
 }
 
 .slider {
   position: relative;
-  height: 100vh;
-  width: calc(100vw / 3);
+  height: 55vh;
+  width: 25vw;
+
+	margin: auto;
 
   transition: $accent-time-transition;
   cursor: url('/assets/image/icons/swaip-cursor-01.svg'), auto;
+	border-radius: 0.7rem;
+	background-color: rgba(0,0,0,.3);
+	box-shadow: 0 0 20px $contur-dark-purple;
 
-  &.start {
-    width: calc(100vw / 3);
-  }
-  &.hover {
-    width: calc(100vw / 2);
+  &:hover {
+		transform: scale(1.3) translateY(5%);
+		z-index: 2;
+	}
 
-    .slider__link-arrow {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-  &.not-hover {
-    width: calc(100vw / 4);
-  }
+	.swiper-wrapper {
+		height: 85%;
+		background-color: rgba(0,0,0,.3);
+	}
 
-  &__item {
-
-    &:after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0.4;
-    }
-    &.ilDes {
-      &:after {
-        background-color: $il-des_dark-blue;
-      }
-    }
-    &.paGr {
-      &:after {
-        background-color: $pa-gr_dark-pink;
-      }
-    }
-    &.taSk {
-      &:after {
-        background-color: $ta-sk-le_dark-brown;
-      }
-    }
-  }
   &__viewport {
     display: flex;
     height: 100%;
   }
   &__image {
-    height: 100vh;
-    width: 100%;
+		height: 100%;
+		width: 100%;
     object-fit: cover;
   }
   &__link {
@@ -139,22 +99,25 @@ const removeHover = () => {
     bottom: 0;
     right: 0;
     width: 100%;
-    height: 8%;
-    padding: 20px 10%;
-    text-align: end;
+    height: 15%;
+    text-align: center;
     z-index: 2;
 
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+		align-items: center;
 
     font-size: 26px;
     line-height: 1.2;
     color: $white;
 
     text-shadow: 1px 1px 2px $contur-dark-purple;
-    background-color: rgba(0,0,0,.3);
 
     &-arrow {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+
       margin-right: 10px;
       flex-grow: 1;
       opacity: 0;
@@ -162,6 +125,9 @@ const removeHover = () => {
 
       transition: $accent-time-transition;
     }
+		&-title {
+			font-size: 1.3rem;
+		}
 
   }
 }
