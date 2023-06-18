@@ -12,5 +12,5 @@ export const useCarousels = defineStore('carousels', () => {
     loading.value = false
   }
 
-  return {carouselsData, loading, fetchCarousels}
+  return { carouselsData, loading, fetchCarousels }
 })
