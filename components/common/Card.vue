@@ -1,7 +1,7 @@
 <script setup>
 const props = defineProps({
-	cardData: Array,
-	default: []
+	cardData: Object,
+	default: {}
 })
 
 let swipers = [];
@@ -15,9 +15,7 @@ const onSwiper = (swiper) => {
 <template>
 	<ClientOnly>
 		<Swiper
-			v-for="{ design, slides, path, title } in props.cardData"
 			class="slider"
-			:key="title"
 			:items-to-show="1"
 			:loop="true"
 			:wrapAround="true"
@@ -25,18 +23,18 @@ const onSwiper = (swiper) => {
 		>
 			<SwiperSlide
 				class="slider__item"
-				:class= "design"
-				v-for="(slide, index) in slides"
+				:class= "cardData.design"
+				v-for="(slide, index) in cardData.slides"
 				:key="`slide-${index}`"
 			>
 				<img class="slider__image" :src="`/banner/${slide}`"/>
 			</SwiperSlide>
 
 			<nuxt-link
-				:class="['slider__link', design]"
-				:to=path
+				:class="['slider__link', cardData.design]"
+				:to=cardData.path
 			>
-				<span class="slider__link-title">{{ title }}</span>
+				<span class="slider__link-title">{{ cardData.title }}</span>
 			</nuxt-link>
 		</Swiper>
 	</ClientOnly>

@@ -12,19 +12,17 @@ store.fetchGalleryParams()
 <template>
   <section class='main-gallery'>
     <h1 class='main-gallery__title'>Gallery Sections</h1>
-    <ClientOnly>
-      <div class="main-gallery__links">
-        <NuxtLink
-          v-for="link in store.params"
-          :key=link.title
-          :to=getLink(link.path)
-          :class="['main-gallery__item', link.option]"
-        >
-          <span class="main-gallery__item-title">{{ link.title }}</span>
-          <span class="main-gallery__item-arrow">&#10140;</span>
-        </NuxtLink>
-      </div>
-    </ClientOnly>
+		<div class="main-gallery__links">
+			<NuxtLink
+				v-for="link in store.params"
+				:key=link.title
+				:to=getLink(link.path)
+				:class="['main-gallery__item', link.option]"
+			>
+				<span class="main-gallery__item-title">{{ link.title }}</span>
+				<span class="main-gallery__item-arrow">&#10140;</span>
+			</NuxtLink>
+		</div>
   </section>
 </template>
 

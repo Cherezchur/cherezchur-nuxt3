@@ -20,16 +20,14 @@ paramsCarousel.fetchCarouselItems(routeName)
 
 <template>
   <transition name="gallery">
-    <ClientOnly>
-      <section :class='["gallery", paramsStore.pageParams.option]'>
-        {{ paramsStore.pageParams }}
+		<section :class='["gallery", paramsStore.pageParams.option]'>
+			{{ paramsStore.pageParams }}
 
-        <GalleryTitle :title="paramsStore.pageParams.title"></GalleryTitle>
+			<GalleryTitle :title="paramsStore.pageParams.title"></GalleryTitle>
 
-        <GalleryList :items="paramsCarousel.carouselItems"></GalleryList>
+			<GalleryList :items="paramsCarousel.carouselItems"></GalleryList>
 
-      </section>
-    </ClientOnly>
+		</section>
   </transition>
 </template>
 

@@ -1,6 +1,6 @@
 export default defineEventHandler(() => {
   return {
-    "carousels": [
+    "sections": [
       {
         "title": "illustration and design",
         "path": "/gallery/illustration-and-design", 
