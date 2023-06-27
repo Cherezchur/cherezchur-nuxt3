@@ -12,8 +12,13 @@ export default defineNuxtConfig({
 
   components: [
     {path: '@/components', pathPrefix: false},
+    {path: '@/sections', pathPrefix: false}
   ],
-  
+
+  build: {
+    transpile: ['swiper']
+  },
+
   vite: {
     assetsInclude: ['png','jpg'],
 

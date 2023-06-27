@@ -1,0 +1,17 @@
+[
+  {
+    "path": "/gallery/illustration-and-design",
+    "title": "illustration and design",
+    "design": "ilDes"
+  },
+  {
+    "path": "/gallery/painting-and-graphics",
+    "title": "painting and graphics",
+    "design": "paGr"
+  },
+  {
+    "path": "/gallery/tattoo-sketch-and-letters",
+    "title": "tattoo sketch and letters",
+    "design": "taSk"
+  }
+]

@@ -3,27 +3,32 @@ import { useFetch } from "nuxt/app";
 
 export const useGallery = defineStore('gallery', () => {
 
-  let galleryData = ref([])
+  let slider = ref([])
+  let sections = ref([])
+  let gallery = ref({})
 
-  let sectionData = ref({})
-  let sectionArts = ref([])
-  let sectionParams = ref({})
+  async function fetchSlider() {
+    const { data } = await useFetch('/api/slider')
+    slider.value = data.value
+  }
 
-  const setSectionData = ( path ) => {
-    sectionData.value = galleryData.value.data.find( item => item.path === path )
+  async function fetchSections() {
+    const { data } = await useFetch('/api/gallery-params')
+    sections.value = data.value.sections
   }
 
   async function fetchGallery() {
-    const { data } = await useFetch('/galleryData')
-    console.log(data)
-    galleryData.value = data.value
+    const { data } = await useFetch('/api/gallery')
+    gallery.value = data.value
   }
 
   return {
-    galleryData,
-    sectionData,
+    slider,
+    sections,
+    gallery,
 
-    setSectionData,
-
-    fetchGallery }
+    fetchSlider,
+    fetchSections,
+    fetchGallery
+  }
 })

@@ -2,24 +2,16 @@
 import { useGallery } from '~/store/useGallery'
 
 const galleryStore = useGallery()
-galleryStore.fetchGallery()
+galleryStore.fetchSections()
 
 </script>
 
 <template>
   <section class='gallery-nav'>
     <h1 class='gallery-nav__title'>Gallery Sections</h1>
-		<div class="gallery-nav__links">
-			<NuxtLink
-				v-for="{ title, path, design } in galleryStore.galleryData.gallerySectionsData"
-				:key=title
-				:to=path
-				:class="['gallery-nav__item', design]"
-			>
-				<h2 class="gallery-nav__item-title">{{ title }}</h2>
-				<span class="gallery-nav__item-arrow">&#10140;</span>
-			</NuxtLink>
-		</div>
+
+		<GalleryNavigate :sections="galleryStore.sections"/>
+
   </section>
 </template>
 

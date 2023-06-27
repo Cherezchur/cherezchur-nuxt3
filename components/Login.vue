@@ -103,7 +103,7 @@ const modalUpdate = () => {
     margin-bottom: 25px;
   }
   &__field {
-    input { 
+    input {
       width: 100%;
     }
   }
@@ -122,7 +122,7 @@ const modalUpdate = () => {
     padding: 10px;
 
     color: $white;
-    
+
     border: none;
     border-radius:5px;
     background-color: $pa-gr_dark-pink;

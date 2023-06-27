@@ -39,3 +39,24 @@
 @mixin title-shadow {
   text-shadow: 1px 1px 2px $contur-dark-purple;
 }
+
+@mixin gradient {
+  height: 100%; // Тут высота блока
+  width: 100%; // Тут длина
+  background: rgb(170,200,200);
+  background: radial-gradient(circle, rgba(170,200,200,1) 0%, rgba(195,137,201,1) 51%, rgba(181,128,113,1) 100%);
+  animation: gradient 20s infinite linear; // 10s - скорость анимации
+  background-size: 400%; // Можно менять и подбирать интенсивность
+
+  @keyframes gradient {
+    0% {
+      background-position: 80% 0%;
+    }
+    50% {
+      background-position: 20% 100%;
+    }
+    100% {
+      background-position: 80% 0%;
+    }
+  }
+}
