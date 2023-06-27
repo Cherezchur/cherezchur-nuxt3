@@ -1,0 +1,86 @@
+[
+  {
+    "illustration-and-design": {
+      "path": "/gallery/illustration-and-design",
+      "title": "illustration and design",
+      "design": "ilDes",
+      "slides": [
+        "ild-1.png",
+        "ild-2.png",
+        "ild-3.png"
+      ],
+      "arts": [
+        {
+          "title": "Обложка к альбому 'Distorshn Li and Harly Hantom'",
+          "path": "cover-for-distorshn-li-and-harly-hantom",
+          "description": "В центре композиции надпись в wild стиле. Cover создан для реп альбома. Послушать можно тут - https://vk.com/cherezzchur",
+          "images": [
+            "distorshn-li-and-harly-hantom.png",
+            "distorshn-li-and-harly-hantom-2.jpg",
+            "distorshn-li-and-harly-hantom-3.jpg",
+            "distorshn-li-and-harly-hantom-4.jpg"
+          ],
+          "isLikes": false
+        },
+        {
+          "title": "Face of war",
+          "path": "face-of-war",
+          "description": "Лицо войны. Работа выполнена в векторном масштабируемом формате svg",
+          "images": [
+            "face-of-war.svg",
+            "face-of-war-1.svg"
+          ],
+          "isLikes": false
+        },
+        {
+          "title": "F*ck",
+          "path": "fck",
+          "description": "Иллюстрация сделана в дань святому правилу посылать все правила и даже это правило нужно послать. Работа выполнена в векторном масштабируемом формате svg",
+          "images": [
+            "fck.svg",
+            "fck-1.svg"
+          ],
+          "isLikes": false
+        }
+      ]
+    }
+  },
+  {
+    "painting-and-graphics": {
+      "path": "/gallery/painting-and-graphics",
+      "title": "painting and graphics",
+      "design": "paGr",
+      "slides": [
+        "pg-2.jpg",
+        "pg-1.jpg",
+        "pg-3.jpg"
+      ],
+      "arts": [
+        {
+          "title": "Обложка к альбому 'Distorshn Li and Harly Hantom'",
+          "path": "cover-for-distorshn-li-and-harly-hantom",
+          "description": "В центре композиции надпись в wild стиле. Cover создан для реп альбома. Послушать можно тут - https://vk.com/cherezzchur",
+          "images": [
+            "distorshn-li-and-harly-hantom.png",
+            "distorshn-li-and-harly-hantom-2.jpg",
+            "distorshn-li-and-harly-hantom-3.jpg",
+            "distorshn-li-and-harly-hantom-4.jpg"
+          ],
+          "isLikes": false
+        }
+      ]
+    }
+  },
+  {
+    "tattoo-sketch-and-letters": {
+      "path": "/gallery/tattoo-sketch-and-letters",
+      "title": "tattoo sketch and letters",
+      "design": "taSk",
+      "slides": [
+        "tsl-2.png",
+        "tsl-1.jpg",
+        "tsl-3.jpg"
+      ]
+    }
+  }
+]

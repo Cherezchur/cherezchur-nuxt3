@@ -1,26 +1,23 @@
 <script setup>
-import { useGalleryParams } from '~/store/useGalleryParams'
+import { useGallery } from '~/store/useGallery'
 
-const store = useGalleryParams()
-
-const getLink = (link) => `/gallery/${link}`
-
-store.fetchGalleryParams()
+const galleryStore = useGallery()
+galleryStore.fetchGallery()
 
 </script>
 
 <template>
-  <section class='main-gallery'>
-    <h1 class='main-gallery__title'>Gallery Sections</h1>
-		<div class="main-gallery__links">
+  <section class='gallery-nav'>
+    <h1 class='gallery-nav__title'>Gallery Sections</h1>
+		<div class="gallery-nav__links">
 			<NuxtLink
-				v-for="link in store.params"
-				:key=link.title
-				:to=getLink(link.path)
-				:class="['main-gallery__item', link.option]"
+				v-for="{ title, path, design } in galleryStore.galleryData.gallerySectionsData"
+				:key=title
+				:to=path
+				:class="['gallery-nav__item', design]"
 			>
-				<span class="main-gallery__item-title">{{ link.title }}</span>
-				<span class="main-gallery__item-arrow">&#10140;</span>
+				<h2 class="gallery-nav__item-title">{{ title }}</h2>
+				<span class="gallery-nav__item-arrow">&#10140;</span>
 			</NuxtLink>
 		</div>
   </section>
@@ -28,7 +25,7 @@ store.fetchGalleryParams()
 
 <style lang="scss" scoped>
 
-.main-gallery {
+.gallery-nav {
 
   &__title {
     @include visually-hidden;
@@ -74,7 +71,7 @@ store.fetchGalleryParams()
     &:hover {
       height:40%;
 
-      & .main-gallery__item-arrow {
+      & .gallery-nav__item-arrow {
         opacity: 1;
         margin-left: 0;
       }

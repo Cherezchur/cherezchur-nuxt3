@@ -1,16 +1,11 @@
-export default defineNuxtRouteMiddleware((to, from) => {
+export default defineNuxtRouteMiddleware( async (to, from) => {
 
-  const paramsName = String(to.params.name)
-  const data = $fetch(`/gallery-params`)
+    const pagePath = String(to.path)
 
-  data
-    .then(result => {
+    // @ts-ignore
+    const { galleryPaths } = await $fetch(`/galleryData`)
 
-      let paths: string[] = result.params.map(param => param.path)
-      
-      if(!paths.includes(paramsName)) {
+    if (!galleryPaths.includes(pagePath)) {
         navigateTo('/gallery')
-      }
-
-    })
+    }
 })

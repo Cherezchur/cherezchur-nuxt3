@@ -13,31 +13,29 @@ const onSwiper = (swiper) => {
 </script>
 
 <template>
-	<ClientOnly>
-		<Swiper
-			class="slider"
-			:items-to-show="1"
-			:loop="true"
-			:wrapAround="true"
-			@swiper="onSwiper"
+	<Swiper
+		class="slider"
+		:items-to-show="1"
+		:loop="true"
+		:wrapAround="true"
+		@swiper="onSwiper"
+	>
+		<SwiperSlide
+			class="slider__item"
+			:class= "cardData.design"
+			v-for="(slide, index) in cardData.slides"
+			:key="`slide-${index}`"
 		>
-			<SwiperSlide
-				class="slider__item"
-				:class= "cardData.design"
-				v-for="(slide, index) in cardData.slides"
-				:key="`slide-${index}`"
-			>
-				<img class="slider__image" :src="`/banner/${slide}`"/>
-			</SwiperSlide>
+			<img class="slider__image" :src="`/banner/${slide}`"/>
+		</SwiperSlide>
 
-			<nuxt-link
-				:class="['slider__link', cardData.design]"
-				:to=cardData.path
-			>
-				<span class="slider__link-title">{{ cardData.title }}</span>
-			</nuxt-link>
-		</Swiper>
-	</ClientOnly>
+		<nuxt-link
+			:class="['slider__link', cardData.design]"
+			:to=cardData.path
+		>
+			<h3 class="slider__link-title">{{ cardData.title }}</h3>
+		</nuxt-link>
+	</Swiper>
 </template>
 
 <style lang="scss">

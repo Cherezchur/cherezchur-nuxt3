@@ -1,21 +1,18 @@
 <script setup>
+import { useGallery } from '~/store/useGallery'
 
-import {useSections} from "../store/useSections";
-const storeSections = useSections()
+const galleryStore = useGallery()
+galleryStore.fetchGallery()
 
-const { data } = await useFetch('/sections');
-
-console.log(data)
 </script>
 
 <template>
-
 	<section class="sections">
-		<Card
-			v-for="cardData in data.sections"
-			:key="cardData.title"
-			:cardData="cardData"
-		/>
+<!--		<Card-->
+<!--			v-for="cardData in galleryStore.galleryData.slides"-->
+<!--			:key="cardData.title"-->
+<!--			:cardData="cardData"-->
+<!--		/>-->
 	</section>
 
 </template>
