@@ -1,30 +1,17 @@
 <script setup>
-let isShowModal = ref(false);
-let linkId = ref('');
-
-const modalShowToogle = (option) => {
-  linkId.value = option;
-  isShowModal.value = !isShowModal.value;
-}
+import {useModal} from "~/store/modal";
+const modalStore = useModal()
 
 </script>
 
 <template>
-  <header class='header'>
-    <Logo />
-    <Menu :modalShow="modalShowToogle" />
-  </header>
+	<Header/>
 
   <main class="gradient">
     <slot />
   </main>
 
-  <Modal
-    v-show="isShowModal"
-    :show="isShowModal"
-    :modalOption="linkId"
-    :closeModal="modalShowToogle"
-  />
+  <Modal v-show="modalStore.isShowModal"/>
 </template>
 
 <style lang='scss' scoped>

@@ -60,7 +60,7 @@ const props = defineProps({
 	}
 	&__link {
 		display: flex;
-		align-items: end;
+		align-items: flex-end;
 		height: 100%;
 		padding: 20px 30px;
 

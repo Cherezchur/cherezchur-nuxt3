@@ -1,8 +1,50 @@
+<script setup>
+import { ref, reactive, onMounted, onUnmounted, onUpdated} from 'vue';
+import {useModal} from "~/store/modal";
+
+const modalStore = useModal()
+
+const props = defineProps({
+	show: {
+		type: Boolean,
+		default: false,
+	},
+	modalOption: {
+		type: String,
+		default: 'login'
+	},
+	closeModal: {
+		type: Function,
+		default: () => ''
+	}
+})
+
+let isChange = ref(false)
+
+const changeActiveForm = () => isChange.value = !isChange.value
+
+const modalClose = (modalOption) => props.closeModal(props.modalOption);
+
+const escCloseModal = (e) => {
+	if (props.show && e.key === 'Escape') {
+		props.closeModal(props.modalOption);
+	}
+}
+
+onMounted(() => {
+	window.addEventListener('keydown', escCloseModal);
+});
+
+onUnmounted(() => {
+	window.removeEventListener('keydown', escCloseModal);
+});
+
+</script>
+
 <template>
   <transition name="modal">
     <div 
-      class="modal" 
-      @click="modalClose(modalOption)"
+      class="modal"
     >
       <div  class="modal__backdrop">
         <div class="modal__container">
@@ -14,8 +56,8 @@
             <button
               class="modal__close"
               type="button"
-              :class="[`modal__close_${props.modalOption}`, {'modal__close_change': isChange}]"
-              @click="modalClose(modalOption)"
+              :class="[`modal__close_${modalStore.option}`, {'modal__close_change': isChange}]"
+              @click="modalStore.modalShowToogle('false')"
             >
               <span class="visually-hidden">Закрыть</span>
               <span class="modal__close_element"></span>
@@ -35,46 +77,6 @@
     </div>
   </transition>
 </template>
-
-<script setup>
-import { ref, reactive, onMounted, onUnmounted, onUpdated} from 'vue';
-
-const props = defineProps({
-  show: {
-    type: Boolean,
-    default: false,
-  },
-  modalOption: {
-    type: String,
-    default: 'login'
-  },
-  closeModal: {
-    type: Function,
-    default: () => ''
-  }
-})
-
-let isChange = ref(false)
-
-const changeActiveForm = () => isChange.value = !isChange.value
-
-const modalClose = (modalOption) => props.closeModal(props.modalOption);
-
-const escCloseModal = (e) => {
-  if (props.show && e.key === 'Escape') {
-    props.closeModal(props.modalOption);
-  }
-}
-
-onMounted(() => {
-  window.addEventListener('keydown', escCloseModal);
-});
-
-onUnmounted(() => {
-    window.removeEventListener('keydown', escCloseModal);
-});
-
-</script>
 
 <style lang="scss">
 .modal {

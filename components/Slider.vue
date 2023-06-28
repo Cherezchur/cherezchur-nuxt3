@@ -96,7 +96,7 @@ const onSlideChange = () => {
 	}
 	.swiper-pagination {
 		display: flex;
-		justify-content: end;
+		justify-content: flex-end;
 		padding-right: 10px;
 
 		transition: opacity $time-transition, background $time-transition;

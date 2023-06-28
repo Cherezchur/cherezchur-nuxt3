@@ -1,3 +1,37 @@
+<script setup>
+import LoginIcon from '~/assets/image/icons/login-icon.svg'
+import MessageIcon from '~/assets/image/icons/message.svg'
+import LikeIcon from '~/assets/image/icons/like.svg'
+import { ref} from 'vue';
+import {useModal} from "~/store/modal";
+
+const props = defineProps({
+	modalShow: {
+		type: Function,
+		default: () => ''
+	}
+})
+
+const isActive = ref(false);
+let timerId = ''
+
+const menuTrigger = () => {
+	isActive.value = !isActive.value;
+
+	if(isActive.value) {
+		let timer = setTimeout(() => {
+			isActive.value = !isActive.value
+		}, 10000)
+		timerId = timer;
+	} else {
+		clearTimeout(timerId);
+	}
+}
+
+const modalStore = useModal()
+
+</script>
+
 <template>
   <div class='menu'>
     <button 
@@ -12,11 +46,13 @@
         href='#' 
         class='menu__item' 
         :class='{ menu__item_active: isActive }'
-        @click.prevent="modalShowClick('login')"
+        @click.prevent="modalStore.modalShowToogle('login')"
       >
         <span>Login</span>
         <LoginIcon 
-          class="menu-icon login" width="25px" fill="rgba(255, 255, 255, 0.8)"
+          class="menu-icon login"
+					width="25px"
+					fill="rgba(255, 255, 255, 0.8)"
         />
         <!-- <Icon :name="'login'" :width="'25px'" :fill="'rgba(255, 255, 255, 0.8)'"/> -->
       </a>
@@ -24,11 +60,13 @@
         href='#' 
         class='menu__item' 
         :class='{ menu__item_active: isActive }'
-        @click.prevent="modalShowClick('message')"
+        @click.prevent="modalStore.modalShowToogle('message')"
       >
         <span>Message</span>
         <MessageIcon 
-          name="menu-icon message" width="30px" fill="rgba(255, 255, 255, 0.8)"
+          name="menu-icon message"
+					width="30px"
+					fill="rgba(255, 255, 255, 0.8)"
         />
         <!-- <Icon :name="'message'" :width="'25px'" :fill="'rgba(255, 255, 255, 0.8)'"/> -->
       </a>
@@ -51,39 +89,6 @@
     </nav>
   </div>
 </template>
-
-<script setup>
-import LoginIcon from '~/assets/image/icons/login-icon.svg'
-import MessageIcon from '~/assets/image/icons/message.svg'
-import LikeIcon from '~/assets/image/icons/like.svg'
-import { ref} from 'vue';
-
-const props = defineProps({
-  modalShow: {
-    type: Function,
-    default: () => ''
-  }
-})
-
-const isActive = ref(false);
-let timerId = ''
-
-const menuTrigger = () => {
-  isActive.value = !isActive.value;
-
-  if(isActive.value) {
-    let timer = setTimeout(() => {
-      isActive.value = !isActive.value
-    }, 10000)
-    timerId = timer;
-  } else {
-    clearTimeout(timerId);
-  }
-}
-
-const modalShowClick = (linkName) => props.modalShow(linkName);
-  
-</script>
 
 <style lang='scss' scoped>
 .menu {
