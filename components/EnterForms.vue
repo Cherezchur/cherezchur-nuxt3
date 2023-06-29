@@ -86,7 +86,7 @@ const changeActiveForm = () => {
 
     font-size:14px;
     line-height: 20px;
-    color: $contur-dark-purple;
+    color: $dark-purple;
   }
 
   &__forms {
@@ -110,7 +110,7 @@ const changeActiveForm = () => {
     border: none;
     border-radius:5px;
     background-color: $white;
-    color: $contur-dark-purple;
+    color: $dark-purple;
   }
 
   .active {

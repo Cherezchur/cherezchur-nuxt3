@@ -1,13 +1,4 @@
 <script setup>
-
-// let isShowModal = ref(false);
-// let linkId = ref('');
-//
-// const modalShowToogle = (option) => {
-// 	linkId.value = option;
-// 	isShowModal.value = !isShowModal.value;
-// }
-
 </script>
 
 <template>

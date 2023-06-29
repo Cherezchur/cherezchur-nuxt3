@@ -1,7 +1,8 @@
 :root {
   // Fonts
-  --defaultFont                : 'Roboto', sans-serif;
-  --designFont                 : "CC Wild Words", italic;
+  --RobotoFont                : 'Roboto', sans-serif;
+  --WildRegularFont           : "Wild Words Regular", sans-serif;
+  --WildItalicFont           : "Wild Words Italic", italic;
 
   //color-style
   --white-translucent          :rgba(255, 255, 255, 0.4);
@@ -16,7 +17,8 @@
   --ta-sk-le_light-brown       :#B58071;
   --ta-sk-le_dark-brown        :#804B3A;
 
-  --contur-dark-purple         :#311F2D;
+  --dark-purple                :#311F2D;
+  --dark-purple-translucent    :rgba(49, 31, 45, 0.7);
   --accent-pink                :#E3D2D8;
 
   //transition
@@ -26,8 +28,9 @@
 }
 
 // Fonts
-$defaultFont                :  var(--defaultFont);
-$designFont                 :  var(--designFont);
+$RobotoFont               :  var(--RobotoFont);
+$WildRegularFont          :  var(--WildRegularFont);
+$WildItalicFont          :  var(--WildItalicFont);
 
 //colors
 $white-translucent          :  var(--white-translucent);
@@ -42,7 +45,8 @@ $pa-gr_dark-pink            :  var(--pa-gr_dark-pink);
 $ta-sk-le_light-brown       :  var(--ta-sk-le_light-brown);
 $ta-sk-le_dark-brown        :  var(--ta-sk-le_dark-brown);
 
-$contur-dark-purple         :  var(--contur-dark-purple);
+$dark-purple                :  var(--dark-purple);
+$dark-purple-translucent    :  var(--dark-purple-translucent);
 $accent-pink                :  var(--accent-pink);
 
 //transition

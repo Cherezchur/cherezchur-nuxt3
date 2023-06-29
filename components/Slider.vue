@@ -11,15 +11,9 @@ const props = defineProps({
 let swipers = [];
 
 const modules = [Navigation, Pagination]
-const prev = ref(null);
-const next = ref(null);
 
 const onSwiper = (swiper) => {
 	swipers.push(swiper)
-};
-
-const onSlideChange = () => {
-	console.log('slide change');
 };
 
 </script>
@@ -34,7 +28,6 @@ const onSlideChange = () => {
 		navigation
 		:pagination="{ clickable: true }"
 		@swiper="onSwiper"
-		@slideChange="onSlideChange"
 	>
 		<SwiperSlide
 			:class="['slider__item', design]"
@@ -58,7 +51,7 @@ const onSlideChange = () => {
 		width: 40px;
 		height: 40px;
 		border-radius: 50%;
-		background-color: $contur-dark-purple;
+		background-color: $dark-purple;
 		opacity: 0.6;
 		transition: opacity $time-transition, transform $time-transition;
 
@@ -83,12 +76,14 @@ const onSlideChange = () => {
 		}
 	}
 	.swiper-button-prev {
+		left: 20px;
 		&:after {
 			margin-left: 2px;
 			transform: rotate(-45deg);
 		}
 	}
 	.swiper-button-next {
+		right: 20px;
 		&:after {
 			margin-left: -2px;
 			transform: rotate(135deg);
@@ -97,12 +92,13 @@ const onSlideChange = () => {
 	.swiper-pagination {
 		display: flex;
 		justify-content: flex-end;
-		padding-right: 10px;
+		padding-right: 20px;
+		bottom: 20px;
 
 		transition: opacity $time-transition, background $time-transition;
 	}
 	.swiper-pagination-bullet-active {
-		background: $white;
+		background: $il-des_light-blue;
 	}
 	&__item {
 		&:after {

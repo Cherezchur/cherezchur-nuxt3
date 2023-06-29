@@ -1,17 +1,17 @@
 [
   {
     "path": "/gallery/illustration-and-design",
-    "title": "illustration and design",
+    "title": "Иллюстрации и дизайн",
     "design": "ilDes"
   },
   {
     "path": "/gallery/painting-and-graphics",
-    "title": "painting and graphics",
+    "title": "Живопись и графика",
     "design": "paGr"
   },
   {
     "path": "/gallery/tattoo-sketch-and-letters",
-    "title": "tattoo sketch and letters",
+    "title": "Тату скетчи и надписи",
     "design": "taSk"
   }
 ]

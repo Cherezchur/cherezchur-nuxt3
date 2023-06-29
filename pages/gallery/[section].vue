@@ -52,7 +52,7 @@ const data = galleryStore.gallery[routeName]
     background: linear-gradient(45deg, $ta-sk-le_dark-brown 0%, $ta-sk-le_light-brown 100%);
   }
   &.likes {
-    background: linear-gradient(45deg, $contur-dark-purple 0%, $accent-pink 100%);
+    background: linear-gradient(45deg, $dark-purple 0%, $accent-pink 100%);
   }
 
 	&__title {

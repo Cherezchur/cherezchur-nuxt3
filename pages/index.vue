@@ -19,7 +19,10 @@ if (process.client) {
 		<Slider
 			:data="galleryStore.slider"
 		/>
+
 		<GalleryNavigate :sections="galleryStore.sections"/>
+
+		<Social />
 
 	</section>
 </template>
@@ -27,6 +30,7 @@ if (process.client) {
 
 <style lang='scss'>
 .preview {
+	position: relative;
 	max-height: 100vh;
 	display: flex;
 	flex-direction: row;

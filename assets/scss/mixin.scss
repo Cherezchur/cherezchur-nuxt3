@@ -24,7 +24,7 @@
 }
 @mixin modal-title {
   font-weight: 700;
-  color: $contur-dark-purple;
+  color: $dark-purple;
 }
 
 //containers
@@ -37,10 +37,12 @@
 
 //decoration
 @mixin title-shadow {
-  text-shadow: 1px 1px 2px $contur-dark-purple;
+  text-shadow: 1px 1px 2px $dark-purple;
 }
-
-@mixin gradient {
+@mixin container-shadow {
+  box-shadow: 0px 0px 4px .5px $pa-gr_dark-pink  ;
+}
+@mixin iridescent-gradient {
   height: 100%; // Тут высота блока
   width: 100%; // Тут длина
   background: rgb(170,200,200);

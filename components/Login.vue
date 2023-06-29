@@ -114,7 +114,7 @@ const modalUpdate = () => {
     margin-bottom: 20px;
 
     text-decoration: underline;
-    color: $contur-dark-purple;
+    color: $dark-purple;
     font-size:10px;
   }
   &__submit {

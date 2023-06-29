@@ -77,11 +77,13 @@ const props = defineProps({
 	.gallery-navigate__arrow {
 		width: fit-content;
 
+		font-family: $WildItalicFont;
 		text-align: start;
 		font-size: 2vw;
 		line-height: 1.2;
 		color: $white;
-		text-shadow: 1px 1px 2px $contur-dark-purple;
+
+		@include title-shadow
 	}
 	&__arrow {
 		flex-grow: 1;

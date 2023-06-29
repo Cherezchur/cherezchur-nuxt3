@@ -45,7 +45,7 @@ galleryStore.fetchSections()
     &-title {
       margin-top: auto;
       margin-right: 20px;
-      text-shadow: -1px -1px 2px $contur-dark-purple;
+      text-shadow: -1px -1px 2px $dark-purple;
     }
     &-arrow {
       margin-top: auto;
@@ -79,7 +79,7 @@ galleryStore.fetchSections()
       background: linear-gradient(45deg, $ta-sk-le_dark-brown 0%, $ta-sk-le_light-brown 100%); 
     }
     &.likes {
-      background: linear-gradient(45deg, $contur-dark-purple 0%, $accent-pink 100%); 
+      background: linear-gradient(45deg, $dark-purple 0%, $accent-pink 100%);
     }
   }
 }
