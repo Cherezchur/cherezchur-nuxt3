@@ -5,3 +5,15 @@
 @keyframes checkMenuLink { 
   100% {opacity: 1;}
 }
+
+@keyframes delay-overflow-hidden {
+  0% {
+    overflow: hidden;
+  }
+}
+
+@keyframes delay-overflow-visible {
+  0% {
+    overflow: visible;
+  }
+}

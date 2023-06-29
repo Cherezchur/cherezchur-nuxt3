@@ -90,12 +90,22 @@ const props = defineProps({
 		opacity: 0;
 		transform: translateX(-20%);
 
-		transition: $time-transition;
+		transition: transform $time-transition, opacity $time-transition;
 	}
 
 	@include lg-desktop {
 	}
 	@include md-desktop {
+		&__link {
+
+			&:hover {
+				.gallery-navigate__arrow {
+					opacity: 1;
+					margin-left: 0;
+					transform: translateX(20%);
+				}
+			}
+		}
 	}
 	@include sm-tablets {
 	}

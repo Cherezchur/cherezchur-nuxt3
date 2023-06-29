@@ -34,59 +34,65 @@ const modalStore = useModal()
 
 <template>
   <div class='menu'>
-    <button 
-      class='menu__control' 
-      :class='{ menu__control_active: isActive }' 
-      @click="menuTrigger"
-    >
-      <span></span>
-    </button>
-    <nav class='menu__list'>
-      <button
-       	type="button"
-        class='menu__item'
-        :class='{ menu__item_active: isActive }'
-        @click.prevent="modalStore.modalShowToogle('login')"
-      >
-        <span>Login</span>
-        <LoginIcon 
-          class="menu-icon login"
-					width="25px"
-					fill="rgba(255, 255, 255, 0.8)"
-        />
-        <!-- <Icon :name="'login'" :width="'25px'" :fill="'rgba(255, 255, 255, 0.8)'"/> -->
-      </button>
-      <button
-				type="button"
-        class='menu__item'
-        :class='{ menu__item_active: isActive }'
-        @click.prevent="modalStore.modalShowToogle('message')"
-      >
-        <span>Message</span>
-        <MessageIcon
-					class="menu-icon message"
-					width="30px"
-					fill="rgba(255, 255, 255, 0.8)"
-        />
-        <!-- <Icon :name="'message'" :width="'25px'" :fill="'rgba(255, 255, 255, 0.8)'"/> -->
-      </button>
-      <nuxt-link 
-        no-prefetch 
-        id='likes' 
-        class='menu__item like'
-        :class='{ menu__item_active: isActive }' 
-        to='#' 
-        title='like pins'
-      >
-        <span>
-          Likes
-        </span>
-        <LikeIcon 
-          class="menu-icon likes" width="25px" fill="rgba(255, 255, 255, 0.8)"
-        />
-        <!-- <Icon :name="'like'" :width="'25px'" :fill="'rgba(255, 255, 255, 0.8)'"/> -->
-      </nuxt-link>
-    </nav>
+		<div class="menu__wrapper">
+			<nav :class="['menu__list', { show: isActive }]">
+				<button
+					type="button"
+					class='menu__item'
+					@click.prevent="modalStore.modalShowToogle('login')"
+				>
+					<span>Login</span>
+					<span class="menu__arrow">➜</span>
+					<LoginIcon
+						class="menu__icon login"
+						width="25px"
+						fill="rgba(255, 255, 255, 0.8)"
+					/>
+					<!-- <Icon :name="'login'" :width="'25px'" :fill="'rgba(255, 255, 255, 0.8)'"/> -->
+				</button>
+
+				<button
+					type="button"
+					class='menu__item'
+					@click.prevent="modalStore.modalShowToogle('message')"
+				>
+					<span>Message</span>
+					<span class="menu__arrow">➜</span>
+					<MessageIcon
+						class="menu__icon message"
+						width="30px"
+						fill="rgba(255, 255, 255, 0.8)"
+					/>
+					<!-- <Icon :name="'message'" :width="'25px'" :fill="'rgba(255, 255, 255, 0.8)'"/> -->
+				</button>
+
+				<nuxt-link
+					no-prefetch
+					id='likes'
+					class='menu__item like'
+					to='#'
+					title='like pins'
+				>
+					<span>
+						Likes
+					</span>
+					<span class="menu__arrow">➜</span>
+					<LikeIcon
+						class="menu__icon likes"
+						width="25px"
+						fill="rgba(255, 255, 255, 0.8)"
+					/>
+					<!-- <Icon :name="'like'" :width="'25px'" :fill="'rgba(255, 255, 255, 0.8)'"/> -->
+				</nuxt-link>
+			</nav>
+
+			<button
+				:class="['menu__control', { show: isActive } ]"
+				@click="menuTrigger"
+			>
+				<span></span>
+			</button>
+		</div>
   </div>
 </template>
 
@@ -94,10 +100,12 @@ const modalStore = useModal()
 .menu {
 	margin-left: auto;
   margin-top: 40px;
-  display: flex;
-  align-items: center;
-  position: relative;
 
+	&__wrapper {
+		display: flex;
+		align-items: center;
+		position: relative;
+	}
   &__control {
     position: relative;
     padding: 0;
@@ -106,6 +114,7 @@ const modalStore = useModal()
     background-color: transparent;
     border-radius: 50%;
     z-index: 1;
+
     transition: border $time-transition, background-color $time-transition;
 
     &:hover {
@@ -144,7 +153,7 @@ const modalStore = useModal()
       transform: translateX(10px);
     }
 
-    &_active {
+    &.show {
       span::before,
       span::after {
         border-radius: 2.5px;
@@ -158,66 +167,63 @@ const modalStore = useModal()
       }
     }
   }
+	&__list {
+		position: absolute;
+		right: 0;
 
-  &__item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+		display: flex;
+		align-items: center;
 		gap: 10px;
-		padding: 10px;
-		margin-top: 5px;
+		height: 40px;
 
-    position: absolute;
-    top: calc(50% - 20px);
-    left: 0;
-    height: 30px;
+		border-radius: 20px;
+		background-color: $dark-purple-translucent;
 
+		padding: 0;
+		max-width: 0;
 		opacity: 0;
-    border-radius: 20px;
-		//background-color: $dark-purple-translucent;
+		transform-origin: 100% 0;
+		transform: translate(100%);
+		transition: transform $time-transition, max-width $time-transition, padding $time-transition, opacity $time-transition;
+		overflow: hidden;
 
-		.menu-icon {
-			display: none;
-			width: 20px;
-			height: 20px;
+		//animation: delay-overflow-hidden .5s;
 
-			fill: $dark-purple-translucent;
+		&.show {
+			transform: translateX(0);
+			max-width: 50vw;
+			padding: 0 65px 0 15px;
+			opacity: 1;
+
+			//animation: delay-overflow-visible .5s;
+			//overflow: visible;
+		}
+	}
+	&__icon {
+		display: none;
+	}
+	&__item {
+		color: $white;
+
+		&.like {
+			display: flex;
+			text-transform: none;
 		}
 
-    &:nth-child(1) {
-			transition-duration: 0.2s;
-    }
-    &:nth-child(2) {
-			transition-duration: 0.35s;
-    }
-    &:nth-child(3) {
-			transition-duration: 0.5s;
-    }
+		&:hover {
+			.menu__arrow {
+				opacity: 1;
+				margin-left: 5px;
+			}
+		}
+	}
+	&__arrow {
+		opacity: 0;
+		transform: translateX(-20%);
+		margin-left: -10px;
 
-    span {
-      color: $dark-purple;
-			text-shadow: 1px 1px 2px $white-light-translucent;
-    }
-
-    &_active {
-      opacity: 1;
-      &:nth-child(1) {
-        transform: translateX(-80px);
-      }
-      &:nth-child(2) {
-				transform: translateX(-170px);
-      }
-      &:nth-child(3) {
-				transform: translateX(-240px);
-      }
-    }
-
-    img {
-      width: 25px;
-      height: 25px;
-      z-index: 2;
-    }
-  }
+		transition: margin-left $time-transition, opacity $time-transition;
+	}
 
   @include sm-tablets {
     margin-top: 30px;

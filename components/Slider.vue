@@ -97,8 +97,11 @@ const onSwiper = (swiper) => {
 
 		transition: opacity $time-transition, background $time-transition;
 	}
+	.swiper-pagination-bullet {
+		background: $white-light-translucent;
+	}
 	.swiper-pagination-bullet-active {
-		background: $il-des_light-blue;
+		background: $white;
 	}
 	&__item {
 		&:after {
