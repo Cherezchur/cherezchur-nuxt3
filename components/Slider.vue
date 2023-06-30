@@ -50,8 +50,8 @@ const onSwiper = (swiper) => {
 	.swiper-button-next {
 		width: 40px;
 		height: 40px;
-		border-radius: 50%;
-		background-color: $dark-purple;
+		background-repeat: no-repeat;
+		background-size: contain;
 		opacity: 0.6;
 		transition: opacity $time-transition, transform $time-transition;
 
@@ -64,31 +64,22 @@ const onSwiper = (swiper) => {
 		}
 
 		&:after {
-			content: "";
-			position: absolute;
-			left: 10px;
-			width: 20px;
-			height: 20px;
-
-			border-radius: 5px;
-			border-left: 7px solid $white;
-			border-top: 7px solid $white;
+			display: none;
 		}
 	}
+
 	.swiper-button-prev {
 		left: 20px;
-		&:after {
-			margin-left: 2px;
-			transform: rotate(-45deg);
-		}
+		background-position: left;
+		background-image: url(assets/image/icons/arrow-prev.svg);
 	}
+
 	.swiper-button-next {
 		right: 20px;
-		&:after {
-			margin-left: -2px;
-			transform: rotate(135deg);
-		}
+		background-position: right;
+		background-image: url(assets/image/icons/arrow-next.svg);
 	}
+
 	.swiper-pagination {
 		display: flex;
 		justify-content: flex-end;
@@ -97,12 +88,15 @@ const onSwiper = (swiper) => {
 
 		transition: opacity $time-transition, background $time-transition;
 	}
+
 	.swiper-pagination-bullet {
 		background: $white-light-translucent;
 	}
+
 	.swiper-pagination-bullet-active {
 		background: $white;
 	}
+
 	&__item {
 		&:after {
 			content: "";
@@ -140,6 +134,62 @@ const onSwiper = (swiper) => {
 	&__viewport {
 		display: flex;
 		height: 100%;
+	}
+
+	@include lg-desktop {
+		.swiper-button-prev,
+		.swiper-button-next {
+			width: 30px;
+			height: 30px;
+		}
+
+		.swiper-button-prev {
+			left: 10px;
+			&:after {
+				margin-left: 2px;
+				transform: rotate(-45deg);
+			}
+		}
+
+		.swiper-button-next {
+			right: 10px;
+			&:after {
+				margin-left: -2px;
+				transform: rotate(135deg);
+			}
+		}
+	}
+	@include md-desktop {
+		.swiper-button-prev,
+		.swiper-button-next {
+			width: 25px;
+			height: 25px;
+		}
+
+		.swiper-pagination {
+			padding-right: 10px;
+			bottom: 10px;
+		}
+
+		.swiper-pagination-bullet {
+			width: 6px;
+			height: 6px;
+		}
+
+		.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+			margin: 2px;
+		}
+	}
+	@include sm-tablets {
+		.swiper-button-prev,
+		.swiper-button-next {
+			width: 20px;
+			height: 20px;
+		}
+		.swiper-pagination-bullet {
+			width: 5px;
+			height: 5px;
+		}
 	}
 }
 </style>

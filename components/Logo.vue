@@ -14,37 +14,23 @@ import LogoIcon from '~/assets/image/icons/logo-min.svg';
 <style lang='scss' scoped>
 .logo {
   width: 100px;
-  transition: $time-transition $param-transition;
+	margin-right: auto;
+  transition: filter $time-transition $param-transition;
 
   &:hover {
     filter: invert(90%);
   }
 
-  &-link {
-    margin-right: auto;
-    padding-top: 20px;
-  }
-}
+	@include lg-desktop {
+		width: 90px;
+	}
 
-@include lg-desktop {
-  .logo {
-    width: 90px;
-  }
-}
+	@include md-desktop {
+		width: 60px;
+	}
 
-@include md-desktop {
-  .logo {
-    width: 70px;
-  }
-}
-
-@include sm-tablets {
-  .logo {
-    width: 60px;
-
-    &-link {
-      padding-top: 15px;
-    }
-  }
+	@include sm-tablets {
+		width: 60px;
+	}
 }
 </style>

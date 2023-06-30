@@ -6,9 +6,14 @@ galleryStore.fetchSections()
 galleryStore.fetchSlider()
 
 let sliderWidth = ref('50vw')
+let sliderHeight = ref('100vh')
 
 if (process.client) {
 	sliderWidth = window.innerHeight + 'px'
+
+	if ( window.innerWidth < 769 ) {
+		sliderHeight = window.innerWidth + 'px'
+	}
 }
 
 </script>
@@ -37,6 +42,16 @@ if (process.client) {
 
 	.slider {
 		width: v-bind(sliderWidth);
+	}
+
+	@include sm-mobile {
+		height: 100vh;
+		flex-direction: column;
+
+		.slider {
+			width: 100%;
+			height: v-bind(sliderHeight);
+		}
 	}
 }
 </style>

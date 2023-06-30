@@ -77,6 +77,7 @@ const props = defineProps({
 	.gallery-navigate__arrow {
 		width: fit-content;
 
+		text-transform: initial;
 		font-family: $WildItalicFont;
 		text-align: start;
 		font-size: 2vw;
@@ -110,6 +111,22 @@ const props = defineProps({
 	@include sm-tablets {
 	}
 	@include sm-mobile {
+		height: auto;
+
+		&__title,
+		.gallery-navigate__arrow {
+			font-size: 16px;
+		}
+		&__link {
+
+			&:hover {
+				.gallery-navigate__arrow {
+					opacity: 1;
+					margin-left: 0;
+					transform: translateX(10%);
+				}
+			}
+		}
 	}
 	@include ems-mobile {
 	}

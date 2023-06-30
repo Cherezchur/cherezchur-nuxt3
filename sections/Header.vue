@@ -17,12 +17,7 @@
 	position: fixed;
 	width: 100%;
 	height: 0;
-	padding: 0 20px;
-}
+	padding: 10px 10px;
 
-@include sm-tablets {
-	._header {
-		padding: 0 15px;
-	}
 }
 </style>

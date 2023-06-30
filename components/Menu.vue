@@ -99,7 +99,6 @@ const modalStore = useModal()
 <style lang='scss' scoped>
 .menu {
 	margin-left: auto;
-  margin-top: 40px;
 
 	&__wrapper {
 		display: flex;
@@ -133,7 +132,7 @@ const modalStore = useModal()
       position: absolute;
       width: 5px;
       height: 5px;
-      border-radius: 20px;
+      border-radius: 50%;
 			background-color: $dark-purple;
       top: calc(50% - 2.5px);
       left: calc(50% - 2.5px);
@@ -187,16 +186,11 @@ const modalStore = useModal()
 		transition: transform $time-transition, max-width $time-transition, padding $time-transition, opacity $time-transition;
 		overflow: hidden;
 
-		//animation: delay-overflow-hidden .5s;
-
 		&.show {
 			transform: translateX(0);
 			max-width: 50vw;
 			padding: 0 65px 0 15px;
 			opacity: 1;
-
-			//animation: delay-overflow-visible .5s;
-			//overflow: visible;
 		}
 	}
 	&__icon {
@@ -204,6 +198,8 @@ const modalStore = useModal()
 	}
 	&__item {
 		color: $white;
+		font-size: 16px;
+		padding: 0;
 
 		&.like {
 			display: flex;
@@ -225,75 +221,125 @@ const modalStore = useModal()
 		transition: margin-left $time-transition, opacity $time-transition;
 	}
 
-  @include sm-tablets {
-    margin-top: 30px;
+  @include md-desktop {
 
-    &__control {
+		&__control {
+			width: 30px;
+			height: 30px;
 
-      width: 30px;
-      height: 30px;
+			span,
+			span::before,
+			span::after {
+				position: absolute;
+				width: 3px;
+				height: 3px;
+				border-radius: 20px;
+				background-color: $dark-purple;
+				top: calc(50% - 1.5px);
+				left: calc(50% - 1.5px);
+				transition: background-color $time-transition, transform $time-transition;
+			}
 
-      span,
-      span::before,
-      span::after {
-        width: 4px;
-        height: 4px;
-        top: calc(50% - 2px);
-        left: calc(50% - 2px);
-      }
+			span::before {
+				transform: translateX(-8px);
+			}
 
-      span::before {
-        transform: translateX(-8px);
-      }
-      span::after {
-        transform: translateX(8px);
-      }
+			span::after {
+				transform: translateX(8px);
+			}
 
-      &_active {
-        span::before,
-        span::after {
-          border-radius: 2px;
-          width: 18px;
-        }
-        span::before {
-          transform: rotate(45deg) translate(-4.5px, 5px);
-        }
-        span::after {
-          transform: rotate(-45deg) translate(-5px, -4.5px);
-        }
-      }
-    }
+			&.show {
+				span::before,
+				span::after {
+					border-radius: 2.5px;
+					width: 16px;
+				}
+				span::before {
+					transform: rotate(45deg) translate(-4px, 4px);
+				}
+				span::after {
+					transform: rotate(-45deg) translate(-4px, -4px);
+				}
+			}
+		}
+		&__list {
+			height: 30px;
 
-    &__item {
+			border-radius: 15px;
 
-      width: 30px;
-      height: 30px;
-
-      &_active {
-        opacity: 1;
-        &:nth-child(1) {
-          transform: translate(-40px, -5px);
-        }
-        &:nth-child(2) {
-          transform: translate(-30px, 30px);
-        }
-        &:nth-child(3) {
-          transform: translate(5px, 45px);
-        }
-      }
-
-      .login-icon {
-        width: 20px;
-        height: 20px;
-      }
-
-      .message-icon {
-        width: 20px;
-        height: 20px;
-      }
-    }
-
-    
+			&.show {
+				transform: translateX(0);
+				max-width: 50vw;
+				gap: 15px;
+				padding: 0 55px 0 15px;
+				opacity: 1;
+			}
+		}
+		&__item {
+			font-size: 14px;
+		}
   }
+	@include sm-tablets {
+		&__control {
+			width: 25px;
+			height: 25px;
+
+			span,
+			span::before,
+			span::after {
+				position: absolute;
+				width: 3px;
+				height: 3px;
+				border-radius: 20px;
+				background-color: $dark-purple;
+				top: calc(50% - 1.5px);
+				left: calc(50% - 1.5px);
+				transition: background-color $time-transition, transform $time-transition;
+			}
+
+			span::before {
+				transform: translateX(-6px);
+			}
+
+			span::after {
+				transform: translateX(6px);
+			}
+
+			&.show {
+				span::before,
+				span::after {
+					border-radius: 2.5px;
+					width: 16px;
+				}
+				span::before {
+					transform: rotate(45deg) translate(-4px, 4px);
+				}
+				span::after {
+					transform: rotate(-45deg) translate(-4px, -4px);
+				}
+			}
+		}
+		&__item {
+			font-size: 12px;
+		}
+		&__list {
+			height: 25px;
+			&.show {
+				transform: translateX(0);
+				padding: 0 45px 0 15px;
+				max-width: 80vw;
+			}
+		}
+	}
+	@include sm-mobile {
+		&__control {
+			background-color: $white-translucent;
+		}
+	}
+	@include ems-mobile {
+		&__item {
+			font-size: 10px;
+		}
+	}
 }
 </style>
