@@ -8,14 +8,16 @@ galleryStore.fetchSections()
 
 <template>
   <section class='gallery-nav'>
-    <h1 class='gallery-nav__title'>Gallery Sections</h1>
+    <h1 class='gallery-nav__title'>Категории галереи</h1>
 
 		<GalleryNavigate :sections="galleryStore.sections"/>
+
+		<Social />
 
   </section>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 
 .gallery-nav {
 
@@ -69,18 +71,23 @@ galleryStore.fetchSections()
       }
     }
 
-    &.ilDes {
-      background: linear-gradient(45deg, $il-des_dark-blue 0%, $il-des_light-blue  100%);  
-    }
-    &.paGr {
-      background: linear-gradient(45deg, $pa-gr_dark-pink 0%, $pa-gr_light-pink  100%); 
-    }
-    &.taSk {
-      background: linear-gradient(45deg, $ta-sk-le_dark-brown 0%, $ta-sk-le_light-brown 100%); 
-    }
-    &.likes {
-      background: linear-gradient(45deg, $dark-purple 0%, $accent-pink 100%);
-    }
+
   }
+
+	.social {
+		left: auto;
+		right: 10px;
+		bottom: 20px;
+
+		&__link {
+			@include background-gradient;
+		}
+	}
+
+	@include sm-mobile {
+		.gallery-navigate {
+			height: 100vh;
+		}
+	}
 }
 </style>

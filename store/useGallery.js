@@ -6,6 +6,7 @@ export const useGallery = defineStore('gallery', () => {
   let slider = ref([])
   let sections = ref([])
   let gallery = ref({})
+  let art = ref({})
 
   async function fetchSlider() {
     const { data } = await useFetch('/api/slider')
@@ -22,13 +23,22 @@ export const useGallery = defineStore('gallery', () => {
     gallery.value = data.value
   }
 
+  async function fetchArt(routeParams) {
+    const { data } = await useFetch('/api/gallery')
+    const sectionRoute = routeParams.section
+    const pictureRoute = routeParams.picture
+    art.value = data.value[sectionRoute].arts[pictureRoute]
+  }
+
   return {
     slider,
     sections,
     gallery,
+    art,
 
     fetchSlider,
     fetchSections,
-    fetchGallery
+    fetchGallery,
+    fetchArt
   }
 })

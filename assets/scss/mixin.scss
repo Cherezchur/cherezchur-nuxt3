@@ -62,3 +62,17 @@
     }
   }
 }
+@mixin background-gradient {
+  &.ilDes {
+    background: linear-gradient(45deg, $il-des_dark-blue 0%, $il-des_light-blue  100%);
+  }
+  &.paGr {
+    background: linear-gradient(45deg, $pa-gr_dark-pink 0%, $pa-gr_light-pink  100%);
+  }
+  &.taSk {
+    background: linear-gradient(45deg, $ta-sk-le_dark-brown 0%, $ta-sk-le_light-brown 100%);
+  }
+  &.likes {
+    background: linear-gradient(45deg, $dark-purple 0%, $accent-pink 100%);
+  }
+}

@@ -94,8 +94,6 @@ const props = defineProps({
 		transition: transform $time-transition, opacity $time-transition;
 	}
 
-	@include lg-desktop {
-	}
 	@include md-desktop {
 		&__link {
 
@@ -107,8 +105,6 @@ const props = defineProps({
 				}
 			}
 		}
-	}
-	@include sm-tablets {
 	}
 	@include sm-mobile {
 		height: auto;
@@ -127,8 +123,6 @@ const props = defineProps({
 				}
 			}
 		}
-	}
-	@include ems-mobile {
 	}
 }
 </style>

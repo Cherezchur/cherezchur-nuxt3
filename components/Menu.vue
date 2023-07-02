@@ -18,14 +18,14 @@ const menuTrigger = () => {
 	isActive.value = !isActive.value;
 
 	// timer
-	// if(isActive.value) {
-	// 	let timer = setTimeout(() => {
-	// 		isActive.value = !isActive.value
-	// 	}, 10000)
-	// 	timerId = timer;
-	// } else {
-	// 	clearTimeout(timerId);
-	// }
+	if(isActive.value) {
+		let timer = setTimeout(() => {
+			isActive.value = !isActive.value
+		}, 10000)
+		timerId = timer;
+	} else {
+		clearTimeout(timerId);
+	}
 }
 
 const modalStore = useModal()
@@ -48,7 +48,6 @@ const modalStore = useModal()
 						width="25px"
 						fill="rgba(255, 255, 255, 0.8)"
 					/>
-					<!-- <Icon :name="'login'" :width="'25px'" :fill="'rgba(255, 255, 255, 0.8)'"/> -->
 				</button>
 
 				<button
@@ -63,7 +62,6 @@ const modalStore = useModal()
 						width="30px"
 						fill="rgba(255, 255, 255, 0.8)"
 					/>
-					<!-- <Icon :name="'message'" :width="'25px'" :fill="'rgba(255, 255, 255, 0.8)'"/> -->
 				</button>
 
 				<nuxt-link
@@ -82,7 +80,6 @@ const modalStore = useModal()
 						width="25px"
 						fill="rgba(255, 255, 255, 0.8)"
 					/>
-					<!-- <Icon :name="'like'" :width="'25px'" :fill="'rgba(255, 255, 255, 0.8)'"/> -->
 				</nuxt-link>
 			</nav>
 

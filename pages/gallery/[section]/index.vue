@@ -11,10 +11,6 @@ galleryStore.fetchGallery()
 const route = useRoute()
 const routeName = route.params.section
 
-const data = galleryStore.gallery[routeName]
-//
-// console.log(routeName, data)
-
 </script>
 
 <template>
@@ -25,35 +21,21 @@ const data = galleryStore.gallery[routeName]
 	>
 		<h2 class="gallery__title">{{ galleryStore.gallery[routeName].title }}</h2>
 
-		<ul class="gallery__list">
-			<li
-				class="gallery__item"
-				v-for="cardData in galleryStore.gallery[routeName].arts"
-			>
-				<div>
-					{{cardData}}
-				</div>
-			</li>
-		</ul>
+		<GallerySlider
+			:data="galleryStore.gallery[routeName].arts"
+		/>
+
 	</section>
 </template>
 
 <style lang="scss" scoped>
 .gallery {
-  height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  height: 100vh;
 
-  &.ilDes {
-    background: linear-gradient(45deg, $il-des_dark-blue 0%, $il-des_light-blue  100%);
-  }
-  &.paGr {
-    background: linear-gradient(45deg, $pa-gr_dark-pink 0%, $pa-gr_light-pink  100%);
-  }
-  &.taSk {
-    background: linear-gradient(45deg, $ta-sk-le_dark-brown 0%, $ta-sk-le_light-brown 100%);
-  }
-  &.likes {
-    background: linear-gradient(45deg, $dark-purple 0%, $accent-pink 100%);
-  }
+	@include background-gradient;
 
 	&__title {
 		position: fixed;
@@ -63,9 +45,12 @@ const data = galleryStore.gallery[routeName]
 		justify-content: center;
 		width: 100%;
 
-		color: white;
+		text-transform: initial;
+		font-family: $WildRegularFont;
 		text-align: center;
-		font-size: 1.6rem;
+		font-size: 2vw;
+		color: $white;
+
 		@include title-shadow;
 	}
 	&__list {
