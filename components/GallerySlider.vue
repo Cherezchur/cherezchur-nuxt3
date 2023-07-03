@@ -1,31 +1,49 @@
 <script setup>
 
-import { Navigation, Pagination } from 'swiper';
+import {onMounted} from "vue";
+import { EffectCoverflow, Navigation, Pagination } from 'swiper';
 
 const props = defineProps({
 	data: {
-		type: Array,
+		type: Object,
 	}
 })
 
 let swipers = [];
-
-const modules = [Navigation, Pagination]
-
+const modules = [EffectCoverflow, Navigation, Pagination]
 const onSwiper = (swiper) => {
 	swipers.push(swiper)
 };
+
+let sliderWidth = ref('50vw')
+
+if (process.client) {
+	sliderWidth = ( window.innerHeight * .8 ) + 'px'
+
+	// if ( window.innerWidth < 769 ) {
+	// 	sliderHeight = window.innerWidth + 'px'
+	// }
+}
 
 </script>
 
 <template>
 	<Swiper
+		ref="gallerySlider"
 		class="gallery-slider"
 		:items-to-show="1"
 		:loop="true"
 		:wrapAround="true"
 		:modules="modules"
+		:effect="'coverflow'"
+		:centeredSlides="true"
 		navigation
+		:coverflowEffect="{
+			rotate: 0,
+			stretch: 0,
+			depth: 100,
+			modifier: 2.5,
+		}"
 		:pagination="{ clickable: true }"
 		@swiper="onSwiper"
 	>
@@ -47,7 +65,7 @@ const onSwiper = (swiper) => {
 <style lang="scss">
 .gallery-slider {
 	margin: 0 auto;
-	width: 40vw;
+	width: v-bind(sliderWidth);
 	height: 80vh;
 
 	.swiper-button-prev,
