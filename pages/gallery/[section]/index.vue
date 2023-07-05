@@ -23,6 +23,7 @@ const routeName = route.params.section
 
 		<GallerySlider
 			:data="galleryStore.gallery[routeName].arts"
+			:design="galleryStore.gallery[routeName].design"
 		/>
 
 	</section>
@@ -32,22 +33,22 @@ const routeName = route.params.section
 .gallery {
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	flex-direction: column;
+	justify-content: space-between;
   height: 100vh;
+	width: 100vw;
+	overflow: hidden;
 
 	@include background-gradient;
 
 	&__title {
-		position: fixed;
-		top: 30px;
+		margin-top: 30px;
+		text-align: center;
 
-		display: flex;
-		justify-content: center;
 		width: 100%;
 
 		text-transform: initial;
 		font-family: $WildRegularFont;
-		text-align: center;
 		font-size: 2vw;
 		color: $white;
 
