@@ -17,22 +17,75 @@
         "isLikes": false
       },
       "face-of-war": {
-        "title": "Face of war",
+        "title": "Лицо войны",
         "path": "illustration-and-design/face-of-war",
-        "description": "Лицо войны. Работа выполнена в векторном масштабируемом формате svg",
+        "description": "Работа передает суть войны, которая выражена в кровавых слезах женщины. Выполнена в векторном масштабируемом формате svg.",
         "imagesPaths": [
           "face-of-war.svg",
           "face-of-war-1.svg"
         ],
         "isLikes": false
       },
+      "cover-ne-nado": {
+        "title": "Обложка для сингла 'Не надо'",
+        "path": "illustration-and-design/cover-ne-nado",
+        "description": "Обложка для сингла 'Не надо' - лирическая реп композиция",
+        "imagesPaths": [
+          "cover-ne-nado.jpg"
+        ],
+        "isLikes": false
+      },
       "fck": {
         "title": "F*ck",
         "path": "illustration-and-design/fck",
-        "description": "Иллюстрация сделана в дань святому правилу посылать все правила и даже это правило нужно послать. Работа выполнена в векторном масштабируемом формате svg",
+        "description": "Работа выражает юношеское беззаботное правило все посылать в одно место. Выполнена в векторном масштабируемом формате svg",
         "imagesPaths": [
           "fck.svg",
           "fck-1.svg"
+        ],
+        "isLikes": false
+      },
+      "girls-with-smoke": {
+        "title": "Девушка и дым",
+        "path": "illustration-and-design/girls-with-smoke",
+        "description": "Иллюстрация изображает девушку, повернутую к нам в пол оборота. Она заигрывает и окутывая нас дымом своих страстей. Выполнена в векторном масштабируемом формате svg",
+        "imagesPaths": [
+          "girls-with-smoke.svg"
+        ],
+        "isLikes": false
+      },
+      "itape1-cover": {
+        "title": "Обложка к альбому 'Itape1'",
+        "path": "illustration-and-design/itape1-cover",
+        "description": "Обложка к альбому 'Itape1' для групы ВИДWTF. Работа выполнена в технике наложения цветов, когда поэтапно один за другим усиливается один тон цвета и в итоге они накладываются друг на друга",
+        "imagesPaths": [
+          "itape1-cover.png",
+          "itape1-cover-1.png",
+          "itape1-cover-2.png",
+          "itape1-cover-3.png",
+          "itape1-cover-4.png",
+          "itape1-cover-5.png",
+          "itape1-cover-6.png"
+        ],
+        "isLikes": false
+      },
+      "livename-art": {
+        "title": "Постер-иллюстрация LIVENAME",
+        "path": "illustration-and-design/livename-art",
+        "description": "Постер-иллюстрация для реп артиста LIVENAME. Выполнена в векторном масштабируемом формате svg",
+        "imagesPaths": [
+          "livename-art.svg"
+        ],
+        "isLikes": false
+      },
+      "mother-portrait": {
+        "title": "Портрет матери",
+        "path": "illustration-and-design/mother-portrait",
+        "description": "На заказе изображена мать заказчицы. Выполнена в векторном масштабируемом формате svg. Цвета были переведены в формат CMYK для дальнейшей печати работы",
+        "imagesPaths": [
+          "mother-portrait.svg",
+          "mother-portrait-1.svg",
+          "mother-portrait-2.svg"
         ],
         "isLikes": false
       }

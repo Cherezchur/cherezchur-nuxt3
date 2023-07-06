@@ -76,6 +76,7 @@ if (process.client) {
 	</div>
 
 	<div class="gallery-slider__pagination"></div>
+
 </template>
 
 <style lang="scss">

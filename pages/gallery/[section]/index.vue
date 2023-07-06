@@ -26,6 +26,8 @@ const routeName = route.params.section
 			:design="galleryStore.gallery[routeName].design"
 		/>
 
+		<Social/>
+
 	</section>
 </template>
 
@@ -62,6 +64,11 @@ const routeName = route.params.section
 	&__item {
 		display: flex;
 		width: 100%;
+	}
+
+	.social {
+		left: auto;
+		right: 20px;
 	}
 }
 </style>
