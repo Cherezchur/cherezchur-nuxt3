@@ -1,0 +1,1 @@
+import{u as r}from"./entry.cd2f9024.js";import{u as a}from"./useGallery.49894401.js";import{N as o,O as s,P as l,u as n,C as u}from"./swiper-vue.ae598e73.js";const d={__name:"index",setup(c){const e=a(),t=r();return e.fetchArt(t.params),(m,p)=>(u(),o("div",null,[s("h1",null,l(n(e).art.title),1)]))}};export{d as default};
