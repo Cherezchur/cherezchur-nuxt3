@@ -3,7 +3,7 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="35f69461-2be9-41c3-94b6-849172e4c74f" name="cherezchur.ru">
-        <fileTransfer rootFolder="/var/www/s246448/data/www/cherezchur.ru" accessType="SFTP" host="ruvip43.hostiman.ru" port="8228" sshConfigId="848dbf34-01c6-4b11-9285-45ae698efd93" sshConfig="s246448@ruvip43.hostiman.ru:8228 password">
+        <fileTransfer accessType="SFTP" host="81.90.180.199" port="22" sshConfigId="848dbf34-01c6-4b11-9285-45ae698efd93" sshConfig="root@81.90.180.199:22 password">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>

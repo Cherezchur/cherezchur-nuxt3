@@ -5,16 +5,18 @@ const galleryStore = useGallery()
 galleryStore.fetchSections()
 galleryStore.fetchSlider()
 
-let sliderWidth = ref('50vw')
-let sliderHeight = ref('100vh')
-
-if (process.client) {
-	sliderWidth = window.innerHeight + 'px'
-
-	if ( window.innerWidth < 769 ) {
-		sliderHeight = window.innerWidth + 'px'
-	}
-}
+// let sliderWidth = ref('50vw')
+// let navigateWidth = ref('50vw')
+// let sliderHeight = ref('100vh')
+//
+// if (process.client) {
+// 	sliderWidth = window.innerHeight + 'px'
+// 	navigateWidth = ( window.innerWidth - window.innerHeight - 10 ) + 'px'
+//
+// 	if ( window.innerWidth < 769 ) {
+// 		sliderHeight = window.innerWidth + 'px'
+// 	}
+// }
 
 </script>
 
@@ -25,7 +27,10 @@ if (process.client) {
 			:data="galleryStore.slider"
 		/>
 
-		<GalleryNavigate :sections="galleryStore.sections"/>
+		<div class="preview__navigate">
+			<PreviewTitle />
+			<GalleryNavigate :sections="galleryStore.sections"/>
+		</div>
 
 		<Social />
 
@@ -37,11 +42,24 @@ if (process.client) {
 .preview {
 	position: relative;
 	max-height: 100vh;
+	height: 100vh;
 	display: flex;
 	flex-direction: row;
+	gap: 10px;
+	padding: 10px;
+	background-color: $dark-purple;
 
 	.slider {
-		width: v-bind(sliderWidth);
+		width: 50%;
+	}
+
+	&__navigate {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		width: 50%;
+		border-radius: 40px;
+		background-color: $grey;
 	}
 
 	@include sm-mobile {

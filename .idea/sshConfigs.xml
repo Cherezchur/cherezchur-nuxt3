@@ -2,7 +2,7 @@
 <project version="4">
   <component name="SshConfigs">
     <configs>
-      <sshConfig authType="PASSWORD" host="ruvip43.hostiman.ru" id="848dbf34-01c6-4b11-9285-45ae698efd93" port="8228" nameFormat="DESCRIPTIVE" username="s246448" useOpenSSHConfig="true" />
+      <sshConfig authType="PASSWORD" host="81.90.180.199" id="848dbf34-01c6-4b11-9285-45ae698efd93" port="22" nameFormat="DESCRIPTIVE" username="root" useOpenSSHConfig="false" />
     </configs>
   </component>
 </project>

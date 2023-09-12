@@ -44,6 +44,7 @@ const onSwiper = (swiper) => {
 <style lang="scss">
 .slider {
 	//cursor: url('/assets/image/icons/swaip-cursor-01.svg'), auto;
+	border-radius: 40px;
 	margin: 0;
 
 	.swiper-button-prev,

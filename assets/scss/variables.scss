@@ -1,13 +1,14 @@
 :root {
   // Fonts
   --RobotoFont                : 'Roboto', sans-serif;
-  --WildRegularFont           : "Wild Words Regular", sans-serif;
-  --WildItalicFont           : "Wild Words Italic", italic;
+  --WildRegularFont           : "WWR", cursive;
+  --WildItalicFont           : "WWI", italic;
 
   //color-style
   --white-translucent          :rgba(255, 255, 255, 0.4);
   --white-light-translucent    :rgba(255, 255, 255, 0.8);
   --white                      :rgba(255, 255, 255, 1);
+  --grey                       :#D9D9D9;
   --black                      :#191A1C;
 
   --il-des_light-blue          :#AAC8C8;
@@ -36,6 +37,7 @@ $WildItalicFont          :  var(--WildItalicFont);
 $white-translucent          :  var(--white-translucent);
 $white-light-translucent    :  var(--white-light-translucent);
 $white                      :  var(--white);
+$grey                       :  var(--grey);
 $black                      :  var(--black);
 
 $il-des_light-blue          :  var(--il-des_light-blue);

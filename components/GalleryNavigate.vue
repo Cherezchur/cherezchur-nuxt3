@@ -23,20 +23,34 @@ const props = defineProps({
 					<span class="gallery-navigate__arrow">➜</span>
 				</NuxtLink>
 			</li>
+			<li class="gallery-navigate__card about">
+				<NuxtLink
+					class="gallery-navigate__link"
+					to="/about"
+				>
+					<h3 class="gallery-navigate__title">О проекте</h3>
+					<span class="gallery-navigate__arrow">➜</span>
+				</NuxtLink>
+			</li>
 		</ul>
 	</nav>
 </template>
 
 <style lang="scss">
 .gallery-navigate {
-	height: 100vh;
+	//height: 100vh;
 	flex-grow: 1;
+	border-radius: 40px;
+	max-height: 50%;
+	margin-top: auto;
+	padding: 3%;
 
 	&__list {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
 		align-items: center;
+		gap: 10px;
 		height: 100%;
 	}
 	&__card {
@@ -47,25 +61,34 @@ const props = defineProps({
 
 		background-repeat: no-repeat;
 		background-size: cover;
+		border-radius: 20px;
 
 		&.ilDes {
-			background-image: url('assets/image/design/ilDes.svg');
+			background-image: url('assets/image/design/paGr.svg');
+			background-color: $il-des_dark-blue ;
 		}
 		&.paGr {
-			background-image: url('assets/image/design/paGr.svg');
+			background-image: url('assets/image/design/ilDes.svg');
+			background-color: $pa-gr_dark-pink ;
 		}
 		&.taSk {
 			background-image: url('assets/image/design/taSk.svg');
+			background-color: $pa-gr_dark-pink ;
+		}
+		&.about {
+			background-image: url('assets/image/icons/logo-eye-blue-background.svg');
+			background-position: 118% 61%;
+			background-size: 33%;
+			background-color: $il-des_light-blue ;
 		}
 	}
 	&__link {
 		display: flex;
-		align-items: flex-end;
+		align-items: center;
+		padding-left: 3%;
 		height: 100%;
-		padding: 20px 30px;
 
 		&:hover {
-
 			.gallery-navigate__arrow {
 				opacity: 1;
 				margin-left: 1vw;
@@ -80,11 +103,9 @@ const props = defineProps({
 		text-transform: initial;
 		font-family: $WildItalicFont;
 		text-align: start;
-		font-size: 2vw;
+		font-size: 1.5vw;
 		line-height: 1.2;
 		color: $white;
-
-		@include title-shadow
 	}
 	&__arrow {
 		flex-grow: 1;
@@ -96,7 +117,6 @@ const props = defineProps({
 
 	@include md-desktop {
 		&__link {
-
 			&:hover {
 				.gallery-navigate__arrow {
 					opacity: 1;

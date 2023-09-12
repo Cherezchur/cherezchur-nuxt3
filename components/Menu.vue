@@ -4,6 +4,8 @@ import MessageIcon from '~/assets/image/icons/message.svg'
 import LikeIcon from '~/assets/image/icons/like.svg'
 import {useModal} from "~/store/modal";
 
+const route = useRoute()
+
 const props = defineProps({
 	modalShow: {
 		type: Function,
@@ -33,7 +35,7 @@ const modalStore = useModal()
 </script>
 
 <template>
-  <div class='menu'>
+  <div v-if="route.name !== 'index'" class='menu'>
 		<div class="menu__wrapper">
 			<nav :class="['menu__list', { show: isActive }]">
 				<button

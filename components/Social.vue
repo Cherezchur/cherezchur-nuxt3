@@ -45,8 +45,8 @@ const socials = ref([
 <style lang="scss">
 .social {
 	position: absolute;
-	bottom: 20px;
-	left: 20px;
+	bottom: 30px;
+	left: 30px;
 	z-index: 1;
 	display: flex;
 	flex-direction: row;
