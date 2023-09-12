@@ -38,12 +38,11 @@ const props = defineProps({
 
 <style lang="scss">
 .gallery-navigate {
-	//height: 100vh;
+	display: flex;
+	flex-direction: column;
 	flex-grow: 1;
-	border-radius: 40px;
 	max-height: 40%;
-	margin-top: auto;
-	padding: 3%;
+	padding: 0 3% 3% 3%;
 
 	&__list {
 		display: flex;
@@ -76,6 +75,9 @@ const props = defineProps({
 			background-color: $pa-gr_dark-pink ;
 		}
 		&.about {
+			border-bottom-left-radius: 30px;
+			border-bottom-right-radius: 30px;
+
 			background-image: url('assets/image/icons/logo-eye-blue-background.svg');
 			background-position: 118% 61%;
 			background-size: 33%;
@@ -103,7 +105,7 @@ const props = defineProps({
 		text-transform: initial;
 		font-family: $WildItalicFont;
 		text-align: start;
-		font-size: 1.5vw;
+		font-size: 1.2vw;
 		line-height: 1.2;
 		color: $white;
 	}
@@ -116,6 +118,13 @@ const props = defineProps({
 	}
 
 	@include md-desktop {
+		max-height: 35%;
+		height: 320px;
+		padding: 0 2% 2% 2%;
+
+		&__card {
+			border-radius: 15px;
+		}
 		&__link {
 			&:hover {
 				.gallery-navigate__arrow {
@@ -126,13 +135,31 @@ const props = defineProps({
 			}
 		}
 	}
-	@include sm-mobile {
-		height: auto;
-
+	@include sm-tablets {
 		&__title,
 		.gallery-navigate__arrow {
 			font-size: 16px;
 		}
+
+		&__card {
+			border-radius: 10px;
+
+			&.about {
+				border-bottom-left-radius: 20px;
+				border-bottom-right-radius: 20px;
+
+				background-image: url('assets/image/icons/logo-eye-blue-background.svg');
+				background-position: 118% 61%;
+				background-size: 33%;
+				background-color: $il-des_light-blue ;
+			}
+		}
+		&__arrow {
+			display: none;
+		}
+	}
+	@include sm-mobile {
+
 		&__link {
 
 			&:hover {

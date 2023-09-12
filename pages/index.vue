@@ -13,13 +13,10 @@ if (process.client) {
 	sliderWidth = window.innerHeight + 'px'
 	navigateWidth = ( window.innerWidth - window.innerHeight ) + 'px'
 
-	if ( window.innerWidth < 769 ) {
-		sliderHeight = window.innerWidth + 'px'
+	if ( window.innerWidth < 768 ) {
+		sliderHeight = sliderWidth + 'px'
 	}
 }
-
-console.log(sliderWidth, navigateWidth)
-
 
 </script>
 
@@ -31,8 +28,9 @@ console.log(sliderWidth, navigateWidth)
 		/>
 
 		<div class="preview__navigate">
-			<PreviewTitle />
+			<PreviewTitle/>
 			<Social/>
+			<Likes/>
 			<GalleryNavigate :sections="galleryStore.sections"/>
 		</div>
 
@@ -54,7 +52,6 @@ console.log(sliderWidth, navigateWidth)
 	.slider {
 		width: v-bind(sliderHeight);
 	}
-
 	&__navigate {
 		display: flex;
 		flex-direction: column;
@@ -65,8 +62,22 @@ console.log(sliderWidth, navigateWidth)
 		background-color: $grey;
 	}
 
+	@include sm-tablets {
+		max-height: 100%;
+		height: 100%;
+		flex-direction: column;
+
+		.slider {
+			width: 100%;
+			height: calc( 100vh - 20px );
+		}
+		&__navigate {
+			border-radius: 20px;
+			width: 100%;
+			height: calc( 100vh - 20px );
+		}
+	}
 	@include sm-mobile {
-		height: 100vh;
 		flex-direction: column;
 
 		.slider {

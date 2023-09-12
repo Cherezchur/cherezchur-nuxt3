@@ -92,7 +92,6 @@ const socials = ref([
 			}
 		}
 	}
-
 	&__title {
 		@include visually-hidden
 	}
@@ -101,33 +100,18 @@ const socials = ref([
 		bottom: 10px;
 		left: 10px;
 
+		margin-top: 20px;
+
 		&__link {
 			width: 20px;
 			height: 20px;
 		}
 	}
-
 	@include sm-mobile {
 		left: auto;
 		right: 10px;
 		bottom: 20px;
-		flex-direction: column;
 		gap: 10px;
-
-		&__link {
-			&.insta {
-				background-image: url("assets/image/icons/insta-hide-mobile.svg");
-			}
-			&.vk {
-				background-image: url("assets/image/icons/vk-hide-mobile.svg");
-			}
-			&.tumbler {
-				background-image: url("assets/image/icons/tblr-hide-mobile.svg");
-			}
-			&.tg {
-				background-image: url("assets/image/icons/tg-hide-mobile.svg");
-			}
-		}
 	}
 }
 </style>

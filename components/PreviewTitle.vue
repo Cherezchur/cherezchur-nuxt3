@@ -12,10 +12,9 @@
 	flex-direction: column;
 	align-items: center;
 
-
 	&__title {
 		width: fit-content;
-		margin-top: 80px;
+		margin-top: 15%;
 
 		text-transform: initial;
 		font-family: 'Besley', serif;
@@ -26,12 +25,10 @@
 		letter-spacing: -1px;
 		color: $dark-purple ;
 	}
-
 	&__title-first {
 		margin-bottom: 10px;
 		display: inline-block;
 	}
-
 	&__name {
 		font-family: $WildItalicFont;
 		font-size: 3vw;
@@ -40,6 +37,42 @@
 
 		display: inline-block;
 		margin-left: 10px;
+	}
+
+	@include md-desktop {
+		height: auto;
+
+		&__title {
+			margin-top: 40px;
+		}
+		&__link {
+
+			&:hover {
+				.gallery-navigate__arrow {
+					opacity: 1;
+					margin-left: 0;
+					transform: translateX(10%);
+				}
+			}
+		}
+	}
+	@include sm-tablets {
+		&__title {
+			font-size: 4vw;
+		}
+		&__name {
+			font-family: $WildItalicFont;
+			font-size: 6vw;
+		}
+	}
+	@include ems-mobile {
+		&__title {
+			font-size: 18px;
+		}
+		&__name {
+			font-family: $WildItalicFont;
+			font-size: 24px;
+		}
 	}
 }
 </style>

@@ -83,7 +83,7 @@ const onSwiper = (swiper) => {
 
 	.swiper-pagination {
 		display: flex;
-		justify-content: flex-end;
+		justify-content: center;
 		padding-right: 20px;
 		bottom: 20px;
 
@@ -182,6 +182,8 @@ const onSwiper = (swiper) => {
 		}
 	}
 	@include sm-tablets {
+		border-radius: 20px;
+
 		.swiper-button-prev,
 		.swiper-button-next {
 			width: 20px;

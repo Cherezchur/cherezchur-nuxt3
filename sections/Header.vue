@@ -17,7 +17,11 @@
 	position: fixed;
 	width: 100%;
 	height: 0;
-	padding: 30px 30px;
+	padding: 30px;
+
+	@include sm-tablets {
+		padding: 20px;
+	}
 
 }
 </style>
