@@ -4,10 +4,12 @@
     font-style: $f-style;
     font-weight: $f-weight;
     font-display: swap;
-    src: url($f-url) format("woff");
+    src: url($f-url) format("woff"), url($f-url) format("truetype");
   }
 }
 
+@include font('WWR', italic, 400, 'assets/fonts/CCWildWordsLower-Regular.ttf');
+@include font('WWI', italic, 400, 'assets/fonts/CCWildWordsLower-Italic.ttf');
 @include font('WWR', italic, 400, 'assets/fonts/CCWildWordsLower-Regular.woff');
 @include font('WWI', italic, 400, 'assets/fonts/CCWildWordsLower-Italic.woff');
 //@include font('Wild Words', italic, 400, 'assets/fonts/CC-Wild-Words-Italic.ttf');
