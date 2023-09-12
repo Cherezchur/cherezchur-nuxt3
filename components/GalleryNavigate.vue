@@ -28,7 +28,7 @@ const props = defineProps({
 					class="gallery-navigate__link"
 					to="/about"
 				>
-					<h3 class="gallery-navigate__title">О проекте new</h3>
+					<h3 class="gallery-navigate__title">О проекте</h3>
 					<span class="gallery-navigate__arrow">➜</span>
 				</NuxtLink>
 			</li>
@@ -41,7 +41,7 @@ const props = defineProps({
 	//height: 100vh;
 	flex-grow: 1;
 	border-radius: 40px;
-	max-height: 50%;
+	max-height: 40%;
 	margin-top: auto;
 	padding: 3%;
 

@@ -7,7 +7,7 @@ const modalStore = useModal()
 <template>
 	<Header/>
 
-  <main class="gradient">
+  <main>
     <slot />
   </main>
 

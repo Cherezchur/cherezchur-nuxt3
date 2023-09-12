@@ -44,14 +44,14 @@ const socials = ref([
 
 <style lang="scss">
 .social {
-	position: absolute;
-	bottom: 30px;
-	left: 30px;
+	max-width: 165px;
 	z-index: 1;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	gap: 5px;
+	margin: 0 auto;
+	margin-top: 40px;
 
 	&__link {
 		position: relative;
@@ -62,18 +62,6 @@ const socials = ref([
 		height: 30px;
 		background-repeat: no-repeat;
 		background-size: cover;
-
-		&:after {
-			content: "";
-			position: absolute;
-			z-index: -1;
-			top: 1px;
-			left: 1px;
-			width: calc(100% - 2px);
-			height: calc(100% - 2px);
-			background-color: $white;
-			border-radius: 50%;
-		}
 
 		&.insta {
 			background-image: url("assets/image/icons/insta-hide.svg");
