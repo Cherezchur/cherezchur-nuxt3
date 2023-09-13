@@ -14,10 +14,10 @@
 
 	&__title {
 		width: fit-content;
-		margin-top: 15%;
+		margin-top: 80px;
 
 		text-transform: initial;
-		font-family: 'Besley', serif;
+		font-family: $Besley;
 		text-align: center;
 		font-size: 2vw;
 		line-height: 1.1;

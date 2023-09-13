@@ -1,8 +1,9 @@
 :root {
   // Fonts
   --RobotoFont                : 'Roboto', sans-serif;
+  --Besley                    : 'Besley', serif;
   --WildRegularFont           : "WWR", cursive;
-  --WildItalicFont           : "WWI", italic;
+  --WildItalicFont            : "WWI", italic;
 
   //color-style
   --white-translucent          :rgba(255, 255, 255, 0.4);
@@ -30,8 +31,9 @@
 
 // Fonts
 $RobotoFont               :  var(--RobotoFont);
+$Besley                   :  var(--Besley);
 $WildRegularFont          :  var(--WildRegularFont);
-$WildItalicFont          :  var(--WildItalicFont);
+$WildItalicFont           :  var(--WildItalicFont);
 
 //colors
 $white-translucent          :  var(--white-translucent);

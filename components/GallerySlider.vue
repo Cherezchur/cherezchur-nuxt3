@@ -63,8 +63,7 @@ if (process.client) {
 				class="gallery-slider__link"
 				:to="slide.path"
 			>
-				<h3 class="gallery-slider__title">{{slide.title}}</h3>
-				<img class="gallery-slider__image" :src="slide.imagesPaths[0]"/>
+
 			</NuxtLink>
 		</SwiperSlide>
 

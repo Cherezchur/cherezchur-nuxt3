@@ -8,11 +8,11 @@ galleryStore.fetchSections()
 
 <template>
   <section class='gallery-nav'>
-    <h1 class='gallery-nav__title'>Категории галереи</h1>
-
-		<GalleryNavigate :sections="galleryStore.sections"/>
+    <h1 class='gallery-nav__title'>Разделы галереи</h1>
 
 		<Social />
+
+		<GalleryNavigate :sections="galleryStore.sections"/>
 
   </section>
 </template>
@@ -20,6 +20,24 @@ galleryStore.fetchSections()
 <style lang="scss">
 
 .gallery-nav {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+
+	.gallery-navigate {
+		padding: 60px 30px 30px 30px;
+		height: 70vh;
+		max-height: 100vh;
+
+		&__card {
+			&.about {
+				border-radius: 20px;
+			}
+		}
+	}
+	.social {
+		z-index: 15;
+	}
 
   &__title {
     @include visually-hidden;
@@ -74,19 +92,31 @@ galleryStore.fetchSections()
 
   }
 
-	.social {
-		left: auto;
-		right: 10px;
-		bottom: 20px;
+	@include md-desktop {
+		.gallery-navigate {
+			max-height: 100vh;
+			padding: 60px 30px 30px 30px;
+		}
 
-		&__link {
-			@include background-gradient;
+	}
+	@include sm-tablets {
+		.gallery-navigate {
+			padding: 50px 20px 20px 20px;
+		}
+		.social {
+			margin-top: 30px;
 		}
 	}
-
 	@include sm-mobile {
 		.gallery-navigate {
 			height: 100vh;
+		}
+	}
+	@include ems-mobile {
+		.gallery-navigate {
+			&__link {
+				justify-content: center;
+			}
 		}
 	}
 }

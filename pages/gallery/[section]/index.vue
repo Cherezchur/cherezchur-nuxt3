@@ -21,54 +21,60 @@ const routeName = route.params.section
 	>
 		<h2 class="gallery__title">{{ galleryStore.gallery[routeName].title }}</h2>
 
-		<GallerySlider
-			:data="galleryStore.gallery[routeName].arts"
-			:design="galleryStore.gallery[routeName].design"
-		/>
-
-		<Social/>
+		<div class="gallery__list">
+			<div class="gallery__item" v-for="slide in galleryStore.gallery[routeName].arts">
+				<figure>
+					<nuxt-link class="gallery__link" :to="slide.path">
+						<img class="gallery__image" :src="slide.imagesPaths[0]"/>
+						<h3 class="gallery__item-title">{{slide.title}}</h3>
+					</nuxt-link>
+				</figure>
+			</div>
+		</div>
 
 	</section>
 </template>
 
 <style lang="scss" scoped>
+.header {
+	padding: 20px;
+}
 .gallery {
 	display: flex;
 	align-items: center;
 	flex-direction: column;
 	justify-content: space-between;
-  height: 100vh;
-	width: 100vw;
-	overflow: hidden;
-
-	@include background-gradient;
 
 	&__title {
-		margin-top: 30px;
+		position: sticky;
+		top: 0;
+		padding: 30px 0 40px 0;
 		text-align: center;
+		background-color: $white;
 
 		width: 100%;
 
 		text-transform: initial;
-		font-family: $WildRegularFont;
-		font-size: 2vw;
-		color: $white;
-
-		@include title-shadow;
+		font-family: $Besley;
+		font-size: 1.4vw;
+		color: $dark-purple;
 	}
 	&__list {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		margin: 0 auto;
+		columns: 2;
+		column-gap: 30px;
+		width: 1440px;
 	}
 	&__item {
-		display: flex;
-		width: 100%;
+		margin-bottom: 60px;
 	}
-
-	.social {
-		left: auto;
-		right: 20px;
+	&__link {
+		display: flex;
+		flex-direction: column;
+	}
+	&__image {
+		width: 100%;
+		border-radius: 20px;
+		object-fit: cover;
 	}
 }
 </style>

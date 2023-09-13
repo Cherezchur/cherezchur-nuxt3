@@ -13,7 +13,7 @@ import LogoIcon from '~/assets/image/icons/logo-min.svg';
 
 <style lang='scss' scoped>
 .logo {
-  width: 100px;
+  width: 80px;
 	margin-right: auto;
   transition: filter $time-transition $param-transition;
 
@@ -22,15 +22,11 @@ import LogoIcon from '~/assets/image/icons/logo-min.svg';
   }
 
 	@include lg-desktop {
-		width: 90px;
+		width: 70px;
 	}
 
 	@include md-desktop {
-		width: 60px;
-	}
-
-	@include sm-tablets {
-		width: 60px;
+		width: 50px;
 	}
 }
 </style>
