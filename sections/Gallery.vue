@@ -33,6 +33,7 @@ const getArt = (path) => {
 					<figure>
 						<img class="gallery__image" :src="slide.imagesPaths[0]"/>
 						<h3 class="gallery__item-title">{{slide.title}}</h3>
+						<Likes/>
 					</figure>
 				</div>
 			</div>
@@ -54,7 +55,10 @@ const getArt = (path) => {
 	&__title {
 		padding: 30px 0;
 		text-align: center;
-		background-color: $white;
+		background-color: $grey;
+		background-image: url('assets/image/design/paGr.svg');
+		background-repeat: no-repeat;
+		background-size: cover;
 		border-radius: 20px;
 
 		width: 100%;
@@ -63,7 +67,7 @@ const getArt = (path) => {
 		font-family: $WildItalicFont;
 		font-weight: 500;
 		font-size: 1.4vw;
-		color: $dark-purple;
+		color: $accent-pink;
 	}
 	&__wrapper {
 		padding: 50px 150px 130px 150px;
@@ -86,6 +90,7 @@ const getArt = (path) => {
 		font-weight: 500;
 		line-height: 30px;
 		text-align: center;
+		margin-top: 10px;
 	}
 	&__link {
 		display: flex;
@@ -95,6 +100,12 @@ const getArt = (path) => {
 		width: 100%;
 		border-radius: 20px;
 		object-fit: cover;
+	}
+
+	.likes {
+		width: 25px;
+		height: 32px;
+		margin: 10px auto 0 auto;
 	}
 }
 </style>

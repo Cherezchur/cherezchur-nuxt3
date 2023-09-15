@@ -2,6 +2,8 @@
 import {useModal} from "~/store/modal";
 const modalStore = useModal()
 
+const route = useRoute()
+
 </script>
 
 <template>
@@ -10,6 +12,8 @@ const modalStore = useModal()
   <main>
     <slot />
   </main>
+
+	<Footer v-if="route.name !== 'index'"/>
 
   <Modal v-show="modalStore.isShowModal"/>
 </template>

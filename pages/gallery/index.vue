@@ -25,7 +25,7 @@ galleryStore.fetchSections()
 	height: 100vh;
 
 	.gallery-navigate {
-		padding: 60px 30px 30px 30px;
+		padding: 60px 130px 30px 130px;
 		height: 70vh;
 		max-height: 100vh;
 
@@ -95,19 +95,22 @@ galleryStore.fetchSections()
 	@include md-desktop {
 		.gallery-navigate {
 			max-height: 100vh;
-			padding: 60px 30px 30px 30px;
+			padding: 60px 100px 30px 100px;
 		}
 
 	}
 	@include sm-tablets {
 		.gallery-navigate {
-			padding: 50px 20px 20px 20px;
+			padding: 50px 80px 20px 80px;
 		}
 		.social {
 			margin-top: 30px;
 		}
 	}
 	@include sm-mobile {
+		.gallery-navigate {
+			padding: 30px 20px 20px 20px;
+		}
 		.gallery-navigate {
 			height: 100vh;
 		}

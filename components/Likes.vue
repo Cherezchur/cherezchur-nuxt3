@@ -20,7 +20,7 @@
 
 		background-image: url("assets/image/icons/heart-disabled.svg");
 		background-repeat: no-repeat;
-		background-size: cover;
+		background-size: contain;
 
 		transition: background-image $time-transition;
 

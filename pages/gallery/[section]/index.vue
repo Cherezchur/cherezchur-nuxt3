@@ -17,6 +17,7 @@ const routeName = route.params.section
 <template>
 	<div class="gallery-page">
 		<Gallery/>
+		<footer/>
 	</div>
 </template>
 

@@ -1,5 +1,12 @@
 <script setup>
 
+const props = defineProps({
+	mod: {
+		type: String,
+		default: ''
+	}
+})
+
 const socials = ref([
 	{
 		className: "insta",
@@ -26,7 +33,7 @@ const socials = ref([
 </script>
 
 <template>
-	<ul class="social">
+	<ul :class="['social', props.mod]">
 		<li
 			v-for="social in socials"
 			class="social__item"
@@ -52,6 +59,24 @@ const socials = ref([
 	gap: 5px;
 	margin: 0 auto;
 	margin-top: 40px;
+
+	&-footer {
+		.social__link {
+			margin-bottom: 80px;
+			&.insta {
+				background-image: url("assets/image/icons/insta-hide-footer.svg");
+			}
+			&.vk {
+				background-image: url("assets/image/icons/vk-hide-footer.svg");
+			}
+			&.tumbler {
+				background-image: url("assets/image/icons/tblr-hide-footer.svg");
+			}
+			&.tg {
+				background-image: url("assets/image/icons/tg-hide-footer.svg");
+			}
+		}
+	}
 
 	&__link {
 		position: relative;
