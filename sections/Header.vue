@@ -30,7 +30,7 @@ const getGalleryModification = computed(() => {
 	padding: 30px;
 
 	&.gallery-page {
-		padding: 20px;
+		padding: 30px;
 	}
 
 	@include sm-tablets {

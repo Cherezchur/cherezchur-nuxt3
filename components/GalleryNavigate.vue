@@ -60,7 +60,7 @@ const props = defineProps({
 
 		background-repeat: no-repeat;
 		background-size: cover;
-		border-radius: 20px;
+		border-radius: 10px;
 
 		&.ilDes {
 			background-image: url('assets/image/design/paGr.svg');
@@ -122,9 +122,9 @@ const props = defineProps({
 		height: 320px;
 		padding: 0 2% 2% 2%;
 
-		&__card {
-			border-radius: 15px;
-		}
+		//&__card {
+		//	border-radius: 15px;
+		//}
 		&__link {
 			&:hover {
 				.gallery-navigate__arrow {
