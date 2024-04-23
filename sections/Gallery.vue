@@ -55,10 +55,7 @@ const getArt = (path) => {
 	&__title {
 		padding: 30px 0;
 		text-align: center;
-		background-color: $grey;
-		background-image: url('assets/image/design/paGr.svg');
-		background-repeat: no-repeat;
-		background-size: cover;
+    background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
 		border-radius: 20px;
 
 		width: 100%;

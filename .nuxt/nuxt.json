@@ -1,9 +1,9 @@
 {
-  "_hash": "0xyKAYzLpC",
+  "_hash": "hyXHw6YkAh",
   "project": {
-    "rootDir": "D:/SAITS/cherezchur-nuxt3"
+    "rootDir": "D:/SAITS/CHEREZCHUR/cherezchur-nuxt3"
   },
   "versions": {
-    "nuxt": "3.0.0"
+    "nuxt": "3.8.2"
   }
 }
