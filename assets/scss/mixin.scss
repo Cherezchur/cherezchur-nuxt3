@@ -76,3 +76,17 @@
     background: linear-gradient(45deg, $dark-purple 0%, $accent-pink 100%);
   }
 }
+@mixin gradients {
+  &.ilDes {
+    background-image: url('assets/image/design/paGr.svg');
+    background-color: $il-des_dark-blue ;
+  }
+  &.paGr {
+    background-image: url('assets/image/design/ilDes.svg');
+    background-color: $pa-gr_dark-pink ;
+  }
+  &.taSk {
+    background-image: url('assets/image/design/taSk.svg');
+    background-color: $pa-gr_dark-pink ;
+  }
+}

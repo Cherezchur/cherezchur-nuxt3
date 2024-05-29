@@ -62,18 +62,8 @@ const props = defineProps({
 		background-size: cover;
 		border-radius: 10px;
 
-		&.ilDes {
-			background-image: url('assets/image/design/paGr.svg');
-			background-color: $il-des_dark-blue ;
-		}
-		&.paGr {
-			background-image: url('assets/image/design/ilDes.svg');
-			background-color: $pa-gr_dark-pink ;
-		}
-		&.taSk {
-			background-image: url('assets/image/design/taSk.svg');
-			background-color: $pa-gr_dark-pink ;
-		}
+		@include gradients;
+
 		&.about {
 			border-bottom-left-radius: 30px;
 			border-bottom-right-radius: 30px;

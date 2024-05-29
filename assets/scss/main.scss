@@ -23,6 +23,12 @@ body {
   font-size: 14px;
   line-height: 24px;
   text-transform: uppercase;
+
+  background-color: $dark-purple;
+
+  &._light-theme {
+    background-color: $accent-pink;
+  }
 }
 
 img {
@@ -38,4 +44,9 @@ ul {
 a, 
 button {
   cursor: pointer;
-} 
+}
+
+.container {
+  max-width: 1360px;
+  margin: 0 auto;
+}

@@ -97,8 +97,6 @@ const modalStore = useModal()
 
 <style lang='scss' scoped>
 .menu {
-	margin-left: auto;
-
 	&__wrapper {
 		display: flex;
 		align-items: center;

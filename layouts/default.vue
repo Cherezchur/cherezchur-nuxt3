@@ -1,23 +1,24 @@
 <script setup>
-import {useModal} from "~/store/modal";
-const modalStore = useModal()
+import { isPage } from '~/helpers/utils';
+// import {useModal} from "~/store/modal";
+import { PAGES_NAMES } from '~/const';
 
-const route = useRoute()
+// const modalStore = useModal()
 
 </script>
 
 <template>
-	<Header/>
+	<Header v-if="!isPage(PAGES_NAMES.INDEX)"/>
 
-  <main>
-    <slot />
-  </main>
+    <main>
+        <slot />
+    </main>
 
-	<Footer v-if="route.name !== 'index'"/>
+	<Footer v-if="!isPage(PAGES_NAMES.INDEX)"/>
 
-  <Modal v-show="modalStore.isShowModal"/>
+<!--  <Modal v-show="modalStore.isShowModal"/>-->
 </template>
 
-<style lang='scss' scoped>
+<style lang='scss' module>
 //
 </style>

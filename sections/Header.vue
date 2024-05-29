@@ -1,41 +1,41 @@
 <script setup>
-import {computed} from "vue";
-
-const route = useRoute()
-let headerModification = ref('')
-
-const getGalleryModification = computed(() => {
-	if ( route.name === 'gallery-section' ) return headerModification = 'gallery-page'
-	else if ( route.name === 'index' ) return headerModification = 'main-page'
-})
 
 </script>
 
 <template>
-	<header :class="['header', getGalleryModification]">
-		<Logo v-if="getGalleryModification !== 'main-page'"/>
-		<Menu />
+	<header :class="[$style.Header]">
+        <div :class="[$style.HeaderWrapper, 'container']">
+            <Logo />
+            <GalleryTitle />
+            <Menu />
+        </div>
 	</header>
 </template>
 
-<style lang='scss' scoped>
+<style lang='scss' module>
 
-.header {
-	z-index: 10;
-	display: flex;
-	justify-content: space-between;
-	position: fixed;
-	width: 100%;
-	height: 0;
-	padding: 30px;
+.Header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    background-color: $accent-pink;
 
-	&.gallery-page {
-		padding: 30px;
-	}
+    @include gradients;
 
 	@include sm-tablets {
 		padding: 20px;
 	}
+}
 
+.HeaderWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    padding: 15px 0;
 }
 </style>

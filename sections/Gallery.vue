@@ -21,8 +21,6 @@ const getArt = (path) => {
 		v-if="Object.keys(galleryStore.gallery).length > 0"
 		:class='["gallery", galleryStore.gallery[routeName].design]'
 	>
-		<h2 class="gallery__title">{{ galleryStore.gallery[routeName].title }}</h2>
-
 		<div class="gallery__wrapper">
 			<div class="gallery__list">
 				<div
@@ -53,18 +51,7 @@ const getArt = (path) => {
 	border-radius: 40px;
 
 	&__title {
-		padding: 30px 0;
-		text-align: center;
-    background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
-		border-radius: 20px;
 
-		width: 100%;
-
-		text-transform: initial;
-		font-family: $WildItalicFont;
-		font-weight: 500;
-		font-size: 1.4vw;
-		color: $accent-pink;
 	}
 	&__wrapper {
 		padding: 50px 150px 130px 150px;
