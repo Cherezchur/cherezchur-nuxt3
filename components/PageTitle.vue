@@ -1,26 +1,24 @@
 <script setup>
 import {useGallery} from '~/store/useGallery';
+import {isPage} from '~/helpers/utils';
 
 const galleryStore = useGallery()
 const route = useRoute()
 
-const routeName = route.params.section
+const routeName = ref(route.params.section)
+
+isPage('gallery-section')
+
+// const title = galleryStore.gallery[routeName].title
 
 </script>
 
 <template>
-    <h1 :class="[$style.GalleryTitle]">{{ galleryStore.gallery[routeName].title }}</h1>
+<!--    <h1 :class="[$style.PageTitle]">{{ title }}</h1>-->
 </template>
 
 <style lang='scss' module>
-.GalleryTitle {
-    padding: 10px 0;
-    text-align: center;
-    background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
-    border-radius: 20px;
-
-    width: 100%;
-
+.PageTitle {
     text-transform: initial;
     font-family: $WildItalicFont;
     font-weight: 500;

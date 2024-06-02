@@ -1,13 +1,15 @@
 <script setup>
-
 </script>
 
 <template>
 	<header :class="[$style.Header]">
         <div :class="[$style.HeaderWrapper, 'container']">
             <Logo />
-            <GalleryTitle />
-            <Menu />
+
+            <nav :class="[$style.Navigation]">
+                <PageTitle />
+                <Menu />
+            </nav>
         </div>
 	</header>
 </template>
@@ -28,6 +30,14 @@
 	@include sm-tablets {
 		padding: 20px;
 	}
+}
+
+.Navigation {
+    display: flex;
+    text-align: center;
+    background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
+    border-radius: 20px;
+    width: 100%;
 }
 
 .HeaderWrapper {
