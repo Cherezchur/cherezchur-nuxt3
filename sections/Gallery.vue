@@ -6,7 +6,6 @@ definePageMeta({
 })
 
 const galleryStore = useGallery()
-galleryStore.fetchGallery()
 
 const route = useRoute()
 const routeName = route.params.section

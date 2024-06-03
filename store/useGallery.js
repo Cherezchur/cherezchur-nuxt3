@@ -39,6 +39,6 @@ export const useGallery = defineStore('gallery', () => {
     fetchSlider,
     fetchSections,
     fetchGallery,
-    fetchArt
+    fetchArt,
   }
 })

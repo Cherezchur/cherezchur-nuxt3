@@ -5,10 +5,8 @@ import Gallery from "../../../sections/Gallery";
 definePageMeta({
   middleware: ["gallerys-route-validation"]
 })
-
 const galleryStore = useGallery()
 galleryStore.fetchGallery()
-
 const route = useRoute()
 const routeName = route.params.section
 

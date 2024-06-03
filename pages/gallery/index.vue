@@ -3,7 +3,6 @@ import { useGallery } from '~/store/useGallery'
 
 const galleryStore = useGallery()
 galleryStore.fetchSections()
-
 </script>
 
 <template>
